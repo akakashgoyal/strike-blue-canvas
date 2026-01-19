@@ -303,37 +303,62 @@ const Blog = () => {
                 whileHover={{ y: -10 }}
               >
                 <Link to={`/blog/${post.slug}`} className="group block">
-                  <div className="aspect-[16/10] rounded-2xl overflow-hidden shadow-lg mb-5">
-                    <img
-                      src={post.image}
-                      alt={post.title}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
-                    />
-                  </div>
-                  <div className="space-y-3">
-                    <div className="flex items-center justify-between">
-                      <span className="px-3 py-1 bg-primary/10 text-primary text-sm font-bold rounded-full">
-                        {post.category}
-                      </span>
-                      <span className="text-muted-foreground text-sm">
-                        {post.date}
-                      </span>
-                    </div>
-                    <h3 className="font-display text-xl text-foreground group-hover:text-primary transition-colors leading-tight">
-                      {post.title}
-                    </h3>
-                    <p className="text-muted-foreground text-sm line-clamp-2">
-                      {post.excerpt}
-                    </p>
-                    <div className="flex items-center gap-3 pt-2">
+                  <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100">
+                    {/* Image Container */}
+                    <div className="aspect-[16/10] relative overflow-hidden">
                       <img
-                        src={post.authorImage}
-                        alt={post.author}
-                        className="w-8 h-8 rounded-full object-cover"
+                        src={post.image}
+                        alt={post.title}
+                        className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
                       />
-                      <span className="text-sm text-muted-foreground">{post.author}</span>
-                      <span className="text-muted-foreground">·</span>
-                      <span className="text-sm text-muted-foreground">{post.readTime}</span>
+                      <div className="absolute inset-0 bg-gradient-to-t from-black/50 via-transparent to-transparent opacity-0 group-hover:opacity-100 transition-opacity" />
+                      
+                      {/* Category Badge */}
+                      <div className="absolute top-4 left-4">
+                        <span className="px-3 py-1.5 bg-gradient-to-r from-primary to-purple-500 text-white text-xs font-bold rounded-full shadow-lg">
+                          {post.category}
+                        </span>
+                      </div>
+                      
+                      {/* Read Time Badge */}
+                      <div className="absolute top-4 right-4">
+                        <span className="px-3 py-1.5 bg-black/40 backdrop-blur-sm text-white text-xs font-medium rounded-full flex items-center gap-1">
+                          <Clock size={12} />
+                          {post.readTime}
+                        </span>
+                      </div>
+                    </div>
+                    
+                    {/* Card Content */}
+                    <div className="p-6">
+                      <div className="flex items-center gap-2 mb-3 text-muted-foreground text-sm">
+                        <Calendar size={14} />
+                        <span>{post.date}</span>
+                      </div>
+                      
+                      <h3 className="font-display text-xl text-foreground group-hover:text-primary transition-colors leading-tight mb-3 line-clamp-2">
+                        {post.title}
+                      </h3>
+                      
+                      <p className="text-muted-foreground text-sm line-clamp-2 mb-4">
+                        {post.excerpt}
+                      </p>
+                      
+                      {/* Author */}
+                      <div className="flex items-center justify-between pt-4 border-t border-gray-100">
+                        <div className="flex items-center gap-3">
+                          <img
+                            src={post.authorImage}
+                            alt={post.author}
+                            className="w-10 h-10 rounded-full object-cover ring-2 ring-primary/20"
+                          />
+                          <span className="text-sm font-medium text-foreground">{post.author}</span>
+                        </div>
+                        <div className="flex items-center gap-1 text-primary opacity-0 group-hover:opacity-100 transition-all">
+                          <span className="text-sm font-bold">Read</span>
+                          <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                        </div>
+                      </div>
                     </div>
                   </div>
                 </Link>

@@ -216,7 +216,7 @@ const Portfolio = () => {
       {/* Portfolio Grid */}
       <section className="py-20 bg-gradient-to-b from-white to-gray-50">
         <div className="container mx-auto px-4 lg:px-8">
-          <div className="grid md:grid-cols-2 gap-8">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredItems.map((item, index) => (
               <motion.div 
                 key={item.id} 
@@ -228,35 +228,55 @@ const Portfolio = () => {
                 className="group relative cursor-pointer" 
                 onClick={() => setSelectedVideo("https://www.youtube.com/embed/dQw4w9WgXcQ")}
               >
-                <div className="aspect-video rounded-3xl overflow-hidden shadow-2xl">
-                  <img src={item.thumbnail} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                  <div className={`absolute inset-0 bg-gradient-to-t ${item.color} opacity-0 group-hover:opacity-60 transition-opacity duration-300`} />
-                  <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                  <div className="absolute inset-0 flex items-center justify-center">
-                    <motion.div 
-                      initial={{ scale: 0.8, opacity: 0 }}
-                      whileHover={{ scale: 1 }}
-                      className="w-20 h-20 bg-white rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all shadow-2xl"
-                    >
-                      <Play className="text-primary ml-1" size={32} fill="currentColor" />
-                    </motion.div>
+                <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100">
+                  <div className="aspect-[4/3] relative overflow-hidden">
+                    <img src={item.thumbnail} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
+                    <div className={`absolute inset-0 bg-gradient-to-t ${item.color} opacity-0 group-hover:opacity-40 transition-opacity duration-300`} />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
+                    
+                    {/* Play Button */}
+                    <div className="absolute inset-0 flex items-center justify-center">
+                      <motion.div 
+                        initial={{ scale: 0.8, opacity: 0 }}
+                        whileHover={{ scale: 1.1 }}
+                        className="w-16 h-16 bg-white/95 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all shadow-2xl backdrop-blur-sm"
+                      >
+                        <Play className="text-primary ml-1" size={28} fill="currentColor" />
+                      </motion.div>
+                    </div>
+                    
+                    {/* Tags */}
+                    <div className="absolute top-4 left-4 flex gap-2">
+                      <span className={`px-3 py-1.5 bg-gradient-to-r ${item.color} text-white text-xs font-bold rounded-full shadow-lg`}>
+                        {item.category === "films" ? "Film" : "TV Ad"}
+                      </span>
+                    </div>
+                    
+                    {/* Year Badge */}
+                    <div className="absolute top-4 right-4">
+                      <span className="px-3 py-1.5 bg-black/40 backdrop-blur-sm text-white text-xs font-bold rounded-full">
+                        {item.year}
+                      </span>
+                    </div>
                   </div>
-                  <div className="absolute top-4 left-4 flex gap-2">
-                    <span className={`px-4 py-1.5 bg-gradient-to-r ${item.color} text-white text-xs font-bold rounded-full shadow-lg`}>
-                      {item.category === "films" ? "Film" : "TV Ad"}
-                    </span>
-                    <span className="px-4 py-1.5 bg-white/20 backdrop-blur-sm text-white text-xs font-bold rounded-full">
-                      {item.year}
-                    </span>
+                  
+                  {/* Card Content */}
+                  <div className="p-6">
+                    <div className="flex items-center justify-between mb-2">
+                      <span className="text-xs text-muted-foreground font-medium uppercase tracking-wider">{item.client}</span>
+                      <div className="flex items-center gap-1.5 text-muted-foreground">
+                        <Eye size={14} />
+                        <span className="text-xs font-medium">{item.views}</span>
+                      </div>
+                    </div>
+                    <h3 className="font-display text-xl text-foreground group-hover:text-primary transition-colors leading-tight">{item.title}</h3>
+                    
+                    {/* Hover Arrow */}
+                    <div className="flex items-center gap-2 mt-4 text-primary opacity-0 group-hover:opacity-100 transition-all">
+                      <span className="text-sm font-bold">Watch Now</span>
+                      <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                    </div>
                   </div>
-                  <div className="absolute bottom-4 right-4 flex items-center gap-2">
-                    <Eye size={14} className="text-white/80" />
-                    <span className="text-white/80 text-sm">{item.views} views</span>
-                  </div>
-                </div>
-                <div className="mt-5">
-                  <h3 className="font-display text-2xl text-foreground group-hover:text-primary transition-colors">{item.title}</h3>
-                  <p className="text-muted-foreground text-sm mt-1">Client: {item.client}</p>
                 </div>
               </motion.div>
             ))}
