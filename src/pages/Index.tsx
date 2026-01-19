@@ -4,6 +4,7 @@ import { Play, ArrowRight, Film, Tv, Lightbulb, Rocket, Award, Users, Star, Zap,
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import ClientLogos from "@/components/ClientLogos";
+import usePageTitle from "@/hooks/usePageTitle";
 
 const services = [
   {
@@ -71,6 +72,8 @@ const processSteps = [
 ];
 
 const Index = () => {
+  usePageTitle("");
+  
   return (
     <Layout>
       {/* Hero Section - Enhanced */}

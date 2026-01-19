@@ -6,6 +6,7 @@ import { Input } from "@/components/ui/input";
 import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import Layout from "@/components/layout/Layout";
+import usePageTitle from "@/hooks/usePageTitle";
 
 const contactMethods = [
   { icon: Mail, title: "Email Us", content: "info@strikefilmss.com", color: "from-blue-400 to-cyan-500", desc: "strikefilmspvtltd@gmail.com" },
@@ -21,6 +22,7 @@ const faqs = [
 ];
 
 const Contact = () => {
+  usePageTitle("Contact Us");
   const { toast } = useToast();
   const [formData, setFormData] = useState({
     name: "", email: "", company: "", phone: "", service: "", budget: "", message: "",

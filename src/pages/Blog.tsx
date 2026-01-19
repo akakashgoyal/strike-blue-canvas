@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, Clock, User, Sparkles, BookOpen, TrendingUp, Calendar, Search } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import usePageTitle from "@/hooks/usePageTitle";
 
 const blogPosts = [
   {
@@ -90,6 +91,7 @@ const trendingTopics = [
 ];
 
 const Blog = () => {
+  usePageTitle("Blog");
   const [activeCategory, setActiveCategory] = useState("All");
   const [searchQuery, setSearchQuery] = useState("");
 
