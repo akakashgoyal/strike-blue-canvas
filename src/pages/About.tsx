@@ -135,7 +135,7 @@ const About = () => {
               initial={{ opacity: 0, x: 50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8, delay: 0.3 }}
-              className="relative hidden lg:block"
+              className="relative"
             >
               <motion.div
                 animate={{ y: [0, -15, 0] }}
@@ -153,16 +153,16 @@ const About = () => {
                 <motion.div
                   animate={{ y: [0, -10, 0] }}
                   transition={{ duration: 3, repeat: Infinity }}
-                  className="absolute -bottom-6 -right-6 bg-white border border-border p-6 rounded-2xl shadow-2xl"
+                  className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 bg-white border border-border p-4 md:p-6 rounded-2xl shadow-2xl"
                 >
-                  <div className="font-display text-4xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-500">15+</div>
-                  <div className="text-muted-foreground text-sm">Years of Excellence</div>
+                  <div className="font-display text-2xl md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-500">15+</div>
+                  <div className="text-muted-foreground text-xs md:text-sm">Years of Excellence</div>
                 </motion.div>
                 
                 <motion.div
                   animate={{ y: [0, 10, 0] }}
                   transition={{ duration: 4, repeat: Infinity }}
-                  className="absolute -top-8 -left-8 w-28 h-28 rounded-2xl overflow-hidden shadow-xl border-4 border-white hidden xl:block"
+                  className="absolute -top-4 -left-4 md:-top-8 md:-left-8 w-20 h-20 md:w-28 md:h-28 rounded-2xl overflow-hidden shadow-xl border-4 border-white hidden md:block"
                 >
                   <img
                     src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=200&q=80"
