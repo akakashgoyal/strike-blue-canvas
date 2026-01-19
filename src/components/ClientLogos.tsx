@@ -1,34 +1,40 @@
 import { motion } from "framer-motion";
+import bobcardLogo from "@/assets/clients/bobcard.png";
+import laxmipatiLogo from "@/assets/clients/laxmipati.png";
+import obaLogo from "@/assets/clients/oba.png";
+import ltLogo from "@/assets/clients/lt.png";
+import nxteLogo from "@/assets/clients/nxte.png";
+import jswLogo from "@/assets/clients/jsw.png";
 
 const clients = [
   { 
-    name: "Bank of Baroda", 
-    logo: "https://upload.wikimedia.org/wikipedia/commons/thumb/1/1e/Bank_of_Baroda_logo.svg/200px-Bank_of_Baroda_logo.svg.png",
+    name: "BOBCARD", 
+    logo: bobcardLogo,
     color: "from-orange-400 to-red-500"
   },
   { 
-    name: "BOB Card", 
-    logo: "https://www.bobcard.co.in/images/bobcard-logo.png",
-    color: "from-red-400 to-orange-500"
-  },
-  { 
     name: "Laxmipati Sarees", 
-    logo: "https://www.laxmipati.com/pub/media/logo/stores/1/logo.png",
+    logo: laxmipatiLogo,
     color: "from-pink-400 to-rose-500"
   },
   { 
     name: "OBA Electric Vehicle", 
-    logo: "https://placehold.co/200x80/1a1a2e/00d4ff?text=OBA+EV&font=montserrat",
+    logo: obaLogo,
     color: "from-cyan-400 to-blue-500"
   },
   { 
-    name: "NXTEMobility", 
-    logo: "https://placehold.co/200x80/0f172a/22c55e?text=NXTE&font=montserrat",
+    name: "L&T", 
+    logo: ltLogo,
+    color: "from-blue-400 to-indigo-500"
+  },
+  { 
+    name: "NXT-E Mobility", 
+    logo: nxteLogo,
     color: "from-green-400 to-emerald-500"
   },
   { 
     name: "JSW", 
-    logo: "https://upload.wikimedia.org/wikipedia/en/thumb/0/05/JSW_Group_logo.svg/200px-JSW_Group_logo.svg.png",
+    logo: jswLogo,
     color: "from-blue-400 to-indigo-500"
   },
 ];
@@ -76,11 +82,6 @@ const ClientLogos = () => {
                     src={client.logo}
                     alt={client.name}
                     className="max-h-12 max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
-                    onError={(e) => {
-                      // Fallback to text if image fails
-                      e.currentTarget.style.display = 'none';
-                      e.currentTarget.parentElement!.innerHTML = `<span class="font-display text-lg text-foreground">${client.name}</span>`;
-                    }}
                   />
                 </div>
                 <p className="text-center text-xs text-muted-foreground mt-3 font-medium opacity-0 group-hover:opacity-100 transition-opacity">

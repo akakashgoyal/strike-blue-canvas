@@ -1,5 +1,5 @@
 import { Link } from "react-router-dom";
-import { Mail, Phone, MapPin, Instagram, Linkedin, Youtube, Twitter, Heart } from "lucide-react";
+import { Mail, Phone, MapPin, Instagram, Linkedin, Youtube, Twitter } from "lucide-react";
 import { motion } from "framer-motion";
 import strikeLogo from "@/assets/strike-films-logo.png";
 
@@ -147,8 +147,16 @@ const Footer = () => {
 
         {/* Bottom Bar */}
         <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-muted-foreground text-sm flex items-center gap-1">
-            © {new Date().getFullYear()} Strike Productions. Made with <Heart size={14} className="text-red-500 fill-red-500" /> in Mumbai.
+          <p className="text-muted-foreground text-sm flex items-center gap-1 flex-wrap justify-center md:justify-start">
+            © 2026 Strike Productions. Design & Developed by{" "}
+            <a 
+              href="https://digitacetechsolutions.com" 
+              target="_blank" 
+              rel="noopener noreferrer"
+              className="text-primary hover:underline font-medium"
+            >
+              Digitace Tech Solutions
+            </a>
           </p>
           <div className="flex items-center gap-6">
             <Link to="/privacy" className="text-muted-foreground hover:text-primary transition-colors text-sm">
