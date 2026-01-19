@@ -4,6 +4,7 @@ import { ArrowRight, Target, Eye, Heart, Users, Award, Lightbulb, Sparkles, Star
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import ClientLogos from "@/components/ClientLogos";
+import usePageTitle from "@/hooks/usePageTitle";
 
 const values = [
   { icon: Lightbulb, title: "Innovation", description: "We push creative boundaries to deliver fresh, impactful visual storytelling.", color: "from-yellow-400 to-orange-500" },
@@ -36,6 +37,8 @@ const milestones = [
 ];
 
 const About = () => {
+  usePageTitle("About Us");
+  
   return (
     <Layout>
       {/* Hero Section - Enhanced */}

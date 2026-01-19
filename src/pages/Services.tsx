@@ -4,6 +4,7 @@ import { ArrowRight, Sparkles, Film, Tv, Lightbulb, Camera, Video, Megaphone, Gl
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import ClientLogos from "@/components/ClientLogos";
+import usePageTitle from "@/hooks/usePageTitle";
 
 const serviceCategories = [
   {
@@ -77,6 +78,8 @@ const packages = [
 ];
 
 const Services = () => {
+  usePageTitle("Our Services");
+  
   return (
     <Layout>
       {/* Hero Section - Enhanced */}

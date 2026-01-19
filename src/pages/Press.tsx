@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowRight, ExternalLink, Newspaper, Download, Calendar, Award, Star, Sparkles, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import usePageTitle from "@/hooks/usePageTitle";
 
 const pressItems = [
   { id: 1, title: "Strike Productions Wins Best Commercial at Cannes Lions 2024", publication: "Ad Age", date: "December 2024", image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&h=600&fit=crop", link: "#" },
@@ -21,6 +22,8 @@ const awards = [
 ];
 
 const Press = () => {
+  usePageTitle("Press & Media");
+  
   return (
     <Layout>
       {/* Hero Section - Enhanced */}

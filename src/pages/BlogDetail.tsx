@@ -3,6 +3,7 @@ import { motion } from "framer-motion";
 import { ArrowLeft, Clock, User, Calendar, Share2, Twitter, Linkedin, Facebook, ArrowRight, Tag, Bookmark, ThumbsUp, MessageCircle, Sparkles, Play } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import usePageTitle from "@/hooks/usePageTitle";
 
 // Mock blog post data
 const blogPostsData: Record<string, {
@@ -86,6 +87,7 @@ const relatedPosts = [
 const BlogDetail = () => {
   const { slug } = useParams<{ slug: string }>();
   const post = blogPostsData[slug || ""] || blogPostsData["future-of-ai-in-film-production"];
+  usePageTitle(post.title);
 
   return (
     <Layout>

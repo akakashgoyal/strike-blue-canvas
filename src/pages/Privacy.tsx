@@ -3,6 +3,7 @@ import { Link } from "react-router-dom";
 import { ArrowLeft, Shield, Lock, Eye, FileText, Mail, Phone, MapPin, Calendar } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import usePageTitle from "@/hooks/usePageTitle";
 
 const sections = [
   { id: "intro", title: "1. Introduction", icon: FileText },
@@ -14,6 +15,8 @@ const sections = [
 ];
 
 const Privacy = () => {
+  usePageTitle("Privacy Policy");
+  
   return (
     <Layout>
       {/* Hero Section - Enhanced */}

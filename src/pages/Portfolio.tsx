@@ -4,6 +4,7 @@ import { Link } from "react-router-dom";
 import { Play, ArrowRight, Film, Tv, Sparkles, X, Award, Eye, Calendar, Clock, Star, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
+import usePageTitle from "@/hooks/usePageTitle";
 
 type Category = "all" | "films" | "tv";
 
@@ -26,6 +27,7 @@ const stats = [
 ];
 
 const Portfolio = () => {
+  usePageTitle("Portfolio");
   const [activeCategory, setActiveCategory] = useState<Category>("all");
   const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
   const filteredItems = portfolioItems.filter((item) => activeCategory === "all" || item.category === activeCategory);
