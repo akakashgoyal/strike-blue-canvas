@@ -22,7 +22,7 @@ const Navbar = () => {
   return (
     <nav className="fixed top-0 left-0 right-0 z-50 bg-background/90 backdrop-blur-xl border-b border-border/50 shadow-sm">
       <div className="container mx-auto px-4 lg:px-8">
-        <div className="flex items-center justify-between h-20">
+        <div className="flex items-center justify-between h-36">
           {/* Logo */}
           <Link to="/" className="flex items-center">
             <motion.div
@@ -32,7 +32,7 @@ const Navbar = () => {
               <img 
                 src={strikeLogo} 
                 alt="Strike Films" 
-                className="h-40 w-auto object-contain"
+                className="h-14 w-auto object-contain"
               />
             </motion.div>
           </Link>
