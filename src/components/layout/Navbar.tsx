@@ -32,7 +32,7 @@ const Navbar = () => {
               <img 
                 src={strikeLogo} 
                 alt="Strike Films" 
-                className="h-28 w-auto object-contain"
+                className="h-28 w-auto "
               />
             </motion.div>
           </Link>
