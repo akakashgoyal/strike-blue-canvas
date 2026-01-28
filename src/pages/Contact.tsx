@@ -25,7 +25,7 @@ const faqs = [
 const Contact = () => {
   usePageTitle("Contact Us");
   const { toast } = useToast();
-  const [state, handleFormspreeSubmit] = useForm("mwvodykz");
+  const [state, handleFormspreeSubmit] = useForm("maqordwa");
   const [formData, setFormData] = useState({
     name: "", email: "", company: "", phone: "", service: "", budget: "", message: "",
   });
