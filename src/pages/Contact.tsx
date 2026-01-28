@@ -7,6 +7,7 @@ import { Textarea } from "@/components/ui/textarea";
 import { useToast } from "@/hooks/use-toast";
 import Layout from "@/components/layout/Layout";
 import usePageTitle from "@/hooks/usePageTitle";
+import { useForm, ValidationError } from '@formspree/react';
 
 const contactMethods = [
   { icon: Mail, title: "Email Us", content: "info@strikefilmss.com", color: "from-blue-400 to-cyan-500", desc: "strikefilmspvtltd@gmail.com" },
@@ -24,15 +25,27 @@ const faqs = [
 const Contact = () => {
   usePageTitle("Contact Us");
   const { toast } = useToast();
+  const [state, handleFormspreeSubmit] = useForm("mwvodykz");
   const [formData, setFormData] = useState({
     name: "", email: "", company: "", phone: "", service: "", budget: "", message: "",
   });
 
-  const handleSubmit = (e: React.FormEvent) => {
+  const handleSubmit = async (e: React.FormEvent<HTMLFormElement>) => {
     e.preventDefault();
-    toast({ title: "Message Sent!", description: "We'll get back to you within 24 hours." });
-    setFormData({ name: "", email: "", company: "", phone: "", service: "", budget: "", message: "" });
-  };
+  const res = await handleFormspreeSubmit(e);
+
+  if (state.succeeded) {
+    toast({
+      title: "Message Sent Successfully!",
+      description: "We’ve received your message and will contact you within 24 hours 🚀",
+    });
+
+    e.currentTarget.reset();
+    setFormData({
+      name: "", email: "", company: "", phone: "", service: "", budget: "", message: "",
+    });
+  }
+};
 
   const handleChange = (e: React.ChangeEvent<HTMLInputElement | HTMLTextAreaElement | HTMLSelectElement>) => {
     setFormData((prev) => ({ ...prev, [e.target.name]: e.target.value }));
@@ -246,8 +259,9 @@ const Contact = () => {
                   <Textarea name="message" value={formData.message} onChange={handleChange} placeholder="Tell us about your project, goals, and timeline..." required rows={6} className="bg-white border-gray-200 focus:border-primary resize-none rounded-xl text-base" />
                 </div>
                 <motion.div whileHover={{ scale: 1.02 }} whileTap={{ scale: 0.98 }}>
-                  <Button type="submit" size="lg" className="w-full bg-gradient-to-r from-primary to-purple-600 hover:opacity-90 text-white font-bold shadow-xl h-14 rounded-xl text-base">
-                    Send Message <Send className="ml-2" size={18} />
+                  <Button type="submit" size="lg" disabled={state.submitting} className="w-full bg-gradient-to-r from-primary to-purple-600 hover:opacity-90 text-white font-bold shadow-xl h-14 rounded-xl text-base">
+                    {state.submitting ? "Submitting Form" : "Send Message"}
+                    <Send className="ml-2" size={18} />
                   </Button>
                 </motion.div>
               </form>

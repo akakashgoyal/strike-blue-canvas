@@ -285,7 +285,7 @@ const Index = () => {
                   />
                   
                   {/* Floating Cards */}
-                  <motion.div
+                  {/* <motion.div
                     animate={{ y: [0, -10, 0], x: [0, 5, 0] }}
                     transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
                     className="absolute -left-8 top-1/4 bg-white rounded-2xl shadow-2xl p-4 border border-gray-100"
@@ -299,9 +299,9 @@ const Index = () => {
                         <div className="text-xs text-muted-foreground">Awards Won</div>
                       </div>
                     </div>
-                  </motion.div>
+                  </motion.div> */}
                   
-                  <motion.div
+                  {/* <motion.div
                     animate={{ y: [0, 10, 0], x: [0, -5, 0] }}
                     transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
                     className="absolute -right-8 bottom-1/4 bg-white rounded-2xl shadow-2xl p-4 border border-gray-100"
@@ -315,9 +315,9 @@ const Index = () => {
                         <div className="text-xs text-muted-foreground">Projects Done</div>
                       </div>
                     </div>
-                  </motion.div>
+                  </motion.div> */}
 
-                  <motion.div
+                  {/* <motion.div
                     animate={{ y: [0, -8, 0] }}
                     transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
                     className="absolute -bottom-6 left-1/4 bg-white rounded-2xl shadow-2xl p-4 border border-gray-100"
@@ -331,7 +331,7 @@ const Index = () => {
                         <div className="text-xs text-muted-foreground">Happy Clients</div>
                       </div>
                     </div>
-                  </motion.div>
+                  </motion.div> */}
                 </motion.div>
               </motion.div>
             </div>
