@@ -4,7 +4,7 @@ import { Calendar } from "lucide-react";
 const ScheduleMeetingButton = () => {
   return (
     <motion.a
-      href="https://calendly.com/akash-digitace/30min"
+      href="https://calendly.com/indira-strikefilms/30min"
       target="_blank"
       rel="noopener noreferrer"
       initial={{ scale: 0, opacity: 0 }}
