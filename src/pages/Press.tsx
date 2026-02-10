@@ -250,8 +250,8 @@ const Press = () => {
                   </Button>
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }}>
-                  <Button asChild variant="outline" size="lg" className="border-2 border-white text-white hover:bg-white/10 font-bold">
-                    <a href="https://calendly.com/akash-digitace/30min" target="_blank" rel="noopener noreferrer">
+                  <Button asChild  size="lg" className=" text-white hover:bg-white/10 font-bold">
+                    <a href="https://calendly.com/indira-strikefilms/30min" target="_blank" rel="noopener noreferrer">
                       <Calendar className="mr-2" size={18} />
                       Schedule Interview
                     </a>
@@ -311,7 +311,7 @@ const Press = () => {
                 <span className="font-display text-4xl text-white">STRIKE</span>
               </div>
               <p className="text-white/60 text-sm mb-4">Primary Logo (Dark)</p>
-              <Button variant="outline" size="sm" className="w-full border-white/30 text-white hover:bg-white/10">
+              <Button  size="sm" className="w-full border-white/30 text-white hover:bg-white/10">
                 <Download className="mr-2" size={16} />
                 Download
               </Button>

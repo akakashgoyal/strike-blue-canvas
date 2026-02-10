@@ -9,15 +9,10 @@ import usePageTitle from "@/hooks/usePageTitle";
 type Category = "all" | "films" | "tv";
 
 const portfolioItems = [
-  { id: 1, title: "Luxury Car Campaign", category: "films" as const, thumbnail: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&h=450&fit=crop", client: "AutoBrand X", color: "from-amber-500 to-orange-600", year: "2024", views: "2.5M" },
-  { id: 2, title: "Fashion Week Documentary", category: "films" as const, thumbnail: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&h=450&fit=crop", client: "Vogue India", color: "from-pink-500 to-rose-600", year: "2024", views: "1.8M" },
-  { id: 3, title: "Tech Product Launch", category: "tv" as const, thumbnail: "https://images.unsplash.com/photo-1531297484001-80022131f5a1?w=800&h=450&fit=crop", client: "TechCorp", color: "from-blue-500 to-purple-600", year: "2024", views: "3.2M" },
-  { id: 4, title: "Food & Beverage Ad", category: "tv" as const, thumbnail: "https://images.unsplash.com/photo-1504674900247-0877df9cc836?w=800&h=450&fit=crop", client: "Gourmet Foods", color: "from-green-500 to-teal-600", year: "2023", views: "4.1M" },
-  { id: 5, title: "Real Estate Showcase", category: "films" as const, thumbnail: "https://images.unsplash.com/photo-1560518883-ce09059eeffa?w=800&h=450&fit=crop", client: "Premium Homes", color: "from-cyan-500 to-blue-600", year: "2023", views: "1.2M" },
-  { id: 6, title: "Travel Documentary", category: "films" as const, thumbnail: "https://images.unsplash.com/photo-1476514525535-07fb3b4ae5f1?w=800&h=450&fit=crop", client: "Wanderlust", color: "from-purple-500 to-pink-600", year: "2023", views: "2.8M" },
-  { id: 7, title: "Fitness Brand Commercial", category: "tv" as const, thumbnail: "https://images.unsplash.com/photo-1534438327276-14e5300c3a48?w=800&h=450&fit=crop", client: "FitLife", color: "from-red-500 to-orange-600", year: "2024", views: "1.5M" },
-  { id: 8, title: "Beauty Product Campaign", category: "tv" as const, thumbnail: "https://images.unsplash.com/photo-1522335789203-aabd1fc54bc9?w=800&h=450&fit=crop", client: "GlowUp", color: "from-pink-400 to-purple-500", year: "2024", views: "2.1M" },
-];
+  { id: 1, title: "Bank of Baroda | Pradhan Mantri Vidyalaxmi Yojana – Your Launchpad to Higher Education", category: "tv" as const, thumbnail: "https://img.youtube.com/vi/VWQxzq3w2kA/sddefault.jpg", client: "Bank of Baroda", color: "from-amber-500 to-orange-600", year: "2025", video_url: "https://www.youtube.com/embed/VWQxzq3w2kA?si=FPL5BboZSmzzHTyE" },
+  { id: 2, title: "Life me tension nahi lena, Jab RuPay BOBCARD on UPI | #AurKyaChahiye | Up to ₹5 Lakhs Credit", category: "tv" as const, thumbnail: "https://img.youtube.com/vi/u8AM508UURg/sddefault.jpg", client: "BOB Card", color: "from-pink-500 to-rose-600", year: "2024", video_url: "https://www.youtube.com/embed/u8AM508UURg?si=eiq7eJ611QysfENZ" },
+  { id: 3, title: "Krispy Rishtey", category: "films" as const, thumbnail: "krispy rishtey.png", client: "Krispy Rishtey", color: "from-blue-500 to-purple-600", year: "2024", video_url: "https://www.youtube.com/embed/vuXE0ZXP3rk?si=K-NRgo74f_hvWiI8" },
+  ];
 
 const stats = [
   { icon: Film, value: "500+", label: "Projects" },
@@ -116,7 +111,7 @@ const Portfolio = () => {
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Button asChild variant="outline" size="lg" className="border-2 font-bold">
-                    <a href="https://calendly.com/akash-digitace/30min" target="_blank" rel="noopener noreferrer">
+                    <a href="https://calendly.com/indira-strikefilms/30min" target="_blank" rel="noopener noreferrer">
                       <Calendar className="mr-2" size={20} />
                       Book a Call
                     </a>
@@ -228,7 +223,7 @@ const Portfolio = () => {
                 viewport={{ once: true }} 
                 whileHover={{ y: -10 }}
                 className="group relative cursor-pointer" 
-                onClick={() => setSelectedVideo("https://www.youtube.com/embed/dQw4w9WgXcQ")}
+                onClick={() => setSelectedVideo(item.video_url || null)}
               >
                 <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100">
                   <div className="aspect-[4/3] relative overflow-hidden">
@@ -383,8 +378,8 @@ const Portfolio = () => {
                 </Button>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }}>
-                <Button asChild size="lg" variant="outline" className="border-2 border-white text-white hover:bg-white/10 font-bold px-10">
-                  <a href="https://calendly.com/akash-digitace/30min" target="_blank" rel="noopener noreferrer">
+                <Button asChild size="lg"  className=" text-white hover:bg-white/10 font-bold px-10">
+                  <a href="https://calendly.com/indira-strikefilms/30min" target="_blank" rel="noopener noreferrer">
                     <Calendar className="mr-2" size={18} />
                     Book a Call
                   </a>

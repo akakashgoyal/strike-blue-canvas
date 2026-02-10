@@ -31,30 +31,33 @@ const services = [
 ];
 
 const stats = [
-  { number: "500+", label: "Projects Delivered", icon: Star, color: "text-yellow-500" },
-  { number: "150+", label: "Happy Clients", icon: Users, color: "text-blue-500" },
-  { number: "25+", label: "Industry Awards", icon: Award, color: "text-purple-500" },
-  { number: "10+", label: "Years Experience", icon: Zap, color: "text-pink-500" },
+  { number: "8 weeks", label: "Avg. Projects Completion Time", icon: Star, color: "text-yellow-500" },
+  { number: "4.6", label: "Clients Satisfaction Score", icon: Users, color: "text-blue-500" },
+  { number: "75%", label: "Repeat Clients", icon: Award, color: "text-purple-500" },
+  { number: "<2 hours", label: "Response Time", icon: Zap, color: "text-pink-500" },
 ];
 
 const featuredWork = [
   {
-    title: "Luxury Brand Campaign",
+    title: "Bank Of Baroda | Pradhan Mantri Vidyalaxmi Yojana",
     category: "TV Commercial",
     image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&q=80",
     color: "from-amber-500 to-orange-600",
+    link: "https://youtu.be/VWQxzq3w2kA?feature=shared"
   },
   {
-    title: "Tech Product Launch",
+    title: "BOBCard",
     category: "Digital Film",
     image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&q=80",
     color: "from-blue-500 to-purple-600",
+    link: "https://youtu.be/u8AM508UURg?si=7UpsihHsWZpDq7a0"
   },
   {
-    title: "Fashion Week Documentary",
+    title: "Krispy Rishtey",
     category: "Corporate Film",
     image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
     color: "from-pink-500 to-rose-600",
+    link: "https://youtu.be/vuXE0ZXP3rk?si=6hFnQqbU15Oq3Rni"
   },
 ];
 
@@ -256,7 +259,7 @@ const Index = () => {
                   </motion.div>
                   <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                     <Button asChild variant="outline" size="lg" className="border-2 border-primary/30 hover:bg-primary/5 px-8 h-14 text-base bg-white/80 backdrop-blur-sm font-bold">
-                      <a href="https://calendly.com/akash-digitace/30min" target="_blank" rel="noopener noreferrer">
+                      <a href="https://calendly.com/indira-strikefilms/30min" target="_blank" rel="noopener noreferrer">
                         <Calendar size={18} className="mr-2" />
                         Book a Call
                       </a>
@@ -524,7 +527,8 @@ const Index = () => {
                     <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
                       <Play size={16} className="text-white ml-0.5" fill="white" />
                     </div>
-                    <span className="text-sm font-medium">Watch Project</span>
+                    <span className="text-sm font-medium">
+                      <Link to={work.link} target="_blank">Watch Project</Link></span>
                   </div>
                 </div>
               </motion.div>
@@ -683,7 +687,7 @@ const Index = () => {
             </p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 font-bold px-10 py-6 text-lg shadow-2xl">
-                <a href="https://calendly.com/akash-digitace/30min" target="_blank" rel="noopener noreferrer">
+                <a href="https://calendly.com/indira-strikefilms/30min" target="_blank" rel="noopener noreferrer">
                   <Calendar className="mr-2" size={24} />
                   Schedule a Meeting
                 </a>

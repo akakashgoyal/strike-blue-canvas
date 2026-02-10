@@ -25,7 +25,7 @@ const faqs = [
 const Contact = () => {
   usePageTitle("Contact Us");
   const { toast } = useToast();
-  const [state, handleFormspreeSubmit] = useForm("mwvodykz");
+  const [state, handleFormspreeSubmit] = useForm("maqordwa");
   const [formData, setFormData] = useState({
     name: "", email: "", company: "", phone: "", service: "", budget: "", message: "",
   });
@@ -123,7 +123,7 @@ const Contact = () => {
               <div className="flex flex-wrap gap-4">
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Button asChild size="lg" className="bg-gradient-to-r from-primary to-purple-600 text-white font-bold shadow-xl">
-                    <a href="https://calendly.com/akash-digitace/30min" target="_blank" rel="noopener noreferrer">
+                    <a href="https://calendly.com/indira-strikefilms/30min" target="_blank" rel="noopener noreferrer">
                       <Calendar className="mr-2" size={20} />
                       Schedule a Call
                     </a>
@@ -300,7 +300,7 @@ const Contact = () => {
                   Book a time that works for you and let's discuss your project in detail.
                 </p>
                 <Button asChild className="w-full bg-white text-primary hover:bg-white/90 font-bold">
-                  <a href="https://calendly.com/akash-digitace/30min" target="_blank" rel="noopener noreferrer">
+                  <a href="https://calendly.com/indira-strikefilms/30min" target="_blank" rel="noopener noreferrer">
                     Book Now <ArrowRight className="ml-2" size={18} />
                   </a>
                 </Button>
@@ -386,7 +386,7 @@ const Contact = () => {
             </p>
             <motion.div whileHover={{ scale: 1.05 }}>
               <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 font-bold px-10 shadow-2xl">
-                <a href="https://calendly.com/akash-digitace/30min" target="_blank" rel="noopener noreferrer">
+                <a href="https://calendly.com/indira-strikefilms/30min" target="_blank" rel="noopener noreferrer">
                   <Calendar className="mr-2" size={20} />
                   Schedule Your Free Consultation
                 </a>

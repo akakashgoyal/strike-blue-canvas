@@ -236,7 +236,7 @@ const Services = () => {
                 </motion.div>
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Button asChild size="lg" variant="outline" className="border-2 border-primary/30 hover:bg-primary/5 font-bold px-8 py-6 text-lg">
-                    <a href="https://calendly.com/akash-digitace/30min" target="_blank" rel="noopener noreferrer">
+                    <a href="https://calendly.com/indira-strikefilms/30min" target="_blank" rel="noopener noreferrer">
                       <Calendar className="mr-2" size={20} />
                       Book a Call
                     </a>
@@ -691,7 +691,7 @@ const Services = () => {
             </p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 font-bold px-10 py-6 text-lg shadow-2xl">
-                <a href="https://calendly.com/akash-digitace/30min" target="_blank" rel="noopener noreferrer">
+                <a href="https://calendly.com/indira-strikefilms/30min" target="_blank" rel="noopener noreferrer">
                   <Calendar className="mr-2" size={24} />
                   Schedule a Meeting
                 </a>
