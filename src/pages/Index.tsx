@@ -1,32 +1,42 @@
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { motion } from "framer-motion";
-import { Play, ArrowRight, Film, Tv, Lightbulb, Rocket, Award, Users, Star, Zap, Camera, Sparkles, Calendar, Heart, Target, CheckCircle2, Quote, Globe, Mail, Phone } from "lucide-react";
+import { Play, ArrowRight, Film, Tv, Lightbulb, Rocket, Award, Users, Star, Zap, Camera,Megaphone, Sparkles, Calendar, Heart, Target, CheckCircle2, Quote, Globe, Mail, Phone } from "lucide-react";
 import { Button } from "@/components/ui/button";
+import { Carousel, CarouselContent, CarouselItem, CarouselNext, CarouselPrevious } from "@/components/ui/carousel";
 import Layout from "@/components/layout/Layout";
 import ClientLogos from "@/components/ClientLogos";
 import usePageTitle from "@/hooks/usePageTitle";
 
 const services = [
   {
-    icon: Lightbulb,
-    title: "Creative Development",
-    description: "Campaign ideation, scriptwriting, storyboarding, and visual planning that brings your vision to life.",
-    color: "from-yellow-400 to-orange-500",
-    bgColor: "bg-yellow-50",
-  },
-  {
     icon: Film,
     title: "Film & Video Production",
-    description: "Full-service production including direction, cinematography, and post-production excellence.",
-    color: "from-blue-400 to-cyan-500",
-    bgColor: "bg-blue-50",
+    description: `From concept to final cut, we create compelling visual stories that elevate your brand.
+ Ad films, brand films, reels, TVC, and high-quality photoshoots crafted to leave a lasting impact.`,
+    color: "from-yellow-400 to-orange-500",
+    bgColor: "bg-yellow-50",
+    included: ['Ad Films', 'Brand Films', 'Product Shoots', 'Commercial Photography']
+
   },
   {
-    icon: Rocket,
-    title: "Growth & Media Add-Ons",
-    description: "Social optimization, influencer marketing, localization, and AI automation solutions.",
+    icon: Megaphone,
+    title: "Digital Marketing",
+    description: `We don’t just market, we scale your presence.
+Data-driven strategies that boost visibility, engagement, and conversions across digital platforms.
+`,
+    color: "from-blue-400 to-cyan-500",
+    bgColor: "bg-blue-50",
+    included: ['Social Media Marketing', 'Influencer Marketing', 'Paid Advertising']
+      },
+  {
+    icon: Lightbulb,
+    title: "Branding & Strategy",
+    description: `Build a brand that stands out and sells itself.
+We define your identity, position you in the market, and create launch strategies that drive real growth.`,
     color: "from-purple-400 to-pink-500",
     bgColor: "bg-purple-50",
+    included: ['Brand Positioning', 'Brand Identity', 'Personal Branding', 'Go-to-Market Strategy']
   },
 ];
 
@@ -39,26 +49,50 @@ const stats = [
 
 const featuredWork = [
   {
+    title: "Bank Of Baroda | Ek Khas Dost",
+    category: "Bank Of Baroda",
+    image: "https://img.youtube.com/vi/dumi861BdrY/maxresdefault.jpg",
+    color: "from-amber-500 to-orange-600",
+    link: "https://youtu.be/dumi861BdrY?si=fNcbV1CRKUd3FfxB "
+  
+  },
+  {
     title: "Bank Of Baroda | Pradhan Mantri Vidyalaxmi Yojana",
-    category: "TV Commercial",
-    image: "https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&q=80",
+    category: "Bank Of Baroda",
+    image: "https://img.youtube.com/vi/VWQxzq3w2kA/maxresdefault.jpg",
     color: "from-amber-500 to-orange-600",
     link: "https://youtu.be/VWQxzq3w2kA?feature=shared"
   },
   {
+    title: "छठ के बरत बड़ा पावन",
+    category: 'BOB X Chhat Puja',
+    image: "https://img.youtube.com/vi/Nd5Q32acpS8/maxresdefault.jpg",
+    color: "from-yellow-400 to-orange-500",
+    link: "https://youtu.be/Nd5Q32acpS8"
+  },
+  
+  {
+    title: "बरतिन पर होई ना सहाय",
+    category: 'BOB X Chhat Puja',
+    image: "https://img.youtube.com/vi/HytO02X1DHs/maxresdefault.jpg",
+    color: "from-yellow-400 to-orange-500",
+    link: "https://youtu.be/HytO02X1DHs?si=GIYa9DGEzO_wXrRy"
+  },
+  {
+    title: "छठ बरतिन करेली गुहार",
+    category: 'Laxmipati Sarees X Chhat Puja',
+    image: "https://img.youtube.com/vi/ZAw9gQ5TTrc/maxresdefault.jpg",
+    color: "from-yellow-400 to-orange-500",
+    link: "https://youtu.be/ZAw9gQ5TTrc?si=fCbwLiCVgpRrEGh"
+  },
+  {
     title: "BOBCard",
-    category: "Digital Film",
-    image: "https://images.unsplash.com/photo-1574717024653-61fd2cf4d44d?w=800&q=80",
+    category: "BOBCard",
+    image: "https://img.youtube.com/vi/u8AM508UURg/maxresdefault.jpg",
     color: "from-blue-500 to-purple-600",
     link: "https://youtu.be/u8AM508UURg?si=7UpsihHsWZpDq7a0"
   },
-  {
-    title: "Krispy Rishtey",
-    category: "Corporate Film",
-    image: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?w=800&q=80",
-    color: "from-pink-500 to-rose-600",
-    link: "https://youtu.be/vuXE0ZXP3rk?si=6hFnQqbU15Oq3Rni"
-  },
+  
 ];
 
 const testimonials = [
@@ -76,6 +110,16 @@ const processSteps = [
 
 const Index = () => {
   usePageTitle("");
+  const [selectedCategory, setSelectedCategory] = useState("All");
+
+  // Extract unique categories from featuredWork
+  const categories = ["All", ...Array.from(new Set(featuredWork.map((work) => work.category)))];
+
+  // Filter featured work based on selected category
+  const filteredWork =
+    selectedCategory === "All"
+      ? featuredWork
+      : featuredWork.filter((work) => work.category === selectedCategory);
   
   return (
     <Layout>
@@ -135,226 +179,174 @@ const Index = () => {
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
           className="absolute top-24 right-24 hidden lg:block z-20"
         >
-          <div className="w-20 h-20 rounded-3xl bg-gradient-to-br from-yellow-400 to-orange-500 shadow-2xl flex items-center justify-center">
-            <Camera className="text-white" size={36} />
-          </div>
+          
         </motion.div>
         <motion.div 
           animate={{ y: [0, 25, 0], rotate: [0, -15, 0], scale: [1, 1.1, 1] }}
           transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
           className="absolute bottom-32 left-24 hidden lg:block z-20"
         >
-          <div className="w-18 h-18 p-4 rounded-3xl bg-gradient-to-br from-purple-400 to-pink-500 shadow-2xl flex items-center justify-center">
-            <Film className="text-white" size={32} />
-          </div>
+          
         </motion.div>
         <motion.div 
           animate={{ y: [0, -20, 0], x: [0, 15, 0] }}
           transition={{ duration: 7, repeat: Infinity, ease: "easeInOut", delay: 1 }}
           className="absolute top-1/2 right-40 hidden xl:block z-20"
         >
-          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-cyan-400 to-blue-500 shadow-xl flex items-center justify-center">
-            <Sparkles className="text-white" size={28} />
-          </div>
+          
         </motion.div>
         <motion.div 
           animate={{ y: [0, 20, 0], x: [0, -10, 0] }}
           transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
           className="absolute top-40 left-40 hidden xl:block z-20"
         >
-          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-400 to-emerald-500 shadow-xl flex items-center justify-center">
-            <Play className="text-white" size={24} />
-          </div>
+          
         </motion.div>
         <motion.div 
           animate={{ y: [0, -15, 0], rotate: [0, 10, 0] }}
           transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 2 }}
           className="absolute bottom-40 right-60 hidden xl:block z-20"
         >
-          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-rose-400 to-red-500 shadow-lg flex items-center justify-center">
-            <Heart className="text-white" size={20} />
-          </div>
+          
         </motion.div>
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="max-w-6xl mx-auto">
-            <div className="grid lg:grid-cols-2 gap-16 items-center">
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                animate={{ opacity: 1, x: 0 }}
-                transition={{ duration: 0.8 }}
-                className="text-left"
-              >
-                <motion.div 
-                  initial={{ scale: 0, rotate: -10 }}
-                  animate={{ scale: 1, rotate: 0 }}
-                  transition={{ delay: 0.2, type: "spring" }}
-                  className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white shadow-xl border border-primary/20 mb-8"
-                >
-                  <motion.span 
-                    animate={{ scale: [1, 1.3, 1] }}
-                    transition={{ duration: 2, repeat: Infinity }}
-                    className="w-2 h-2 rounded-full bg-gradient-to-r from-primary to-purple-500"
-                  />
-                  <span className="text-sm text-primary font-bold tracking-wider">Premium Production Studio</span>
-                  <Sparkles size={14} className="text-primary" />
-                </motion.div>
-                
-                <motion.h1 
-                  initial={{ opacity: 0, y: 30 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 }}
-                  className="font-display text-5xl sm:text-6xl lg:text-8xl leading-none tracking-wider mb-8"
-                >
-                  <motion.span 
-                    initial={{ opacity: 0, x: -20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.4 }}
-                    className="text-foreground block"
-                  >
-                    WE CREATE
-                  </motion.span>
-                  <motion.span 
-                    initial={{ opacity: 0, scale: 0.8 }}
-                    animate={{ opacity: 1, scale: 1 }}
-                    transition={{ delay: 0.5 }}
-                    className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-500 to-pink-500 block"
-                  >
-                    STRIKING
-                  </motion.span>
-                  <motion.span 
-                    initial={{ opacity: 0, x: 20 }}
-                    animate={{ opacity: 1, x: 0 }}
-                    transition={{ delay: 0.6 }}
-                    className="text-foreground block"
-                  >
-                    VISUALS
-                  </motion.span>
-                </motion.h1>
-                
-                <motion.p 
-                  initial={{ opacity: 0 }}
-                  animate={{ opacity: 1 }}
-                  transition={{ delay: 0.7 }}
-                  className="text-lg sm:text-xl text-muted-foreground max-w-xl leading-relaxed mb-10"
-                >
-                  Award-winning film and TV ads production company crafting compelling visual stories 
-                  that captivate audiences and elevate brands worldwide.
-                </motion.p>
-                
-                <motion.div 
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.8 }}
-                  className="flex flex-col sm:flex-row items-start gap-4"
-                >
-                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                    <Button asChild size="lg" className="bg-gradient-to-r from-primary to-purple-600 hover:opacity-90 text-white font-bold px-8 h-14 text-base shadow-2xl group">
-                      <Link to="/portfolio" className="flex items-center gap-2">
-                        <Play size={18} />
-                        View Our Work
-                        <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
-                      </Link>
-                    </Button>
-                  </motion.div>
-                  <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                    <Button asChild variant="outline" size="lg" className="border-2 border-primary/30 hover:bg-primary/5 px-8 h-14 text-base bg-white/80 backdrop-blur-sm font-bold">
-                      <a href="https://calendly.com/indira-strikefilms/30min" target="_blank" rel="noopener noreferrer">
-                        <Calendar size={18} className="mr-2" />
-                        Book a Call
-                      </a>
-                    </Button>
-                  </motion.div>
-                </motion.div>
-              </motion.div>
 
-              {/* Hero Visual */}
-              <motion.div
-                initial={{ opacity: 0, x: 50, scale: 0.9 }}
-                animate={{ opacity: 1, x: 0, scale: 1 }}
-                transition={{ duration: 0.8, delay: 0.4 }}
-                className="relative hidden lg:block"
-              >
-                <motion.div
-                  animate={{ y: [0, -15, 0] }}
-                  transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
-                  className="relative"
-                >
-                  <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-purple-500/30 rounded-3xl blur-2xl transform rotate-3" />
-                  <img
-                    src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&q=80"
-                    alt="Film Production"
-                    className="relative rounded-3xl shadow-2xl border-4 border-white/50 w-full"
-                  />
-                  
-                  {/* Floating Cards */}
-                  {/* <motion.div
-                    animate={{ y: [0, -10, 0], x: [0, 5, 0] }}
-                    transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                    className="absolute -left-8 top-1/4 bg-white rounded-2xl shadow-2xl p-4 border border-gray-100"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center">
-                        <Award className="text-white" size={24} />
-                      </div>
-                      <div>
-                        <div className="font-bold text-foreground text-lg">25+</div>
-                        <div className="text-xs text-muted-foreground">Awards Won</div>
-                      </div>
-                    </div>
-                  </motion.div> */}
-                  
-                  {/* <motion.div
-                    animate={{ y: [0, 10, 0], x: [0, -5, 0] }}
-                    transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                    className="absolute -right-8 bottom-1/4 bg-white rounded-2xl shadow-2xl p-4 border border-gray-100"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center">
-                        <CheckCircle2 className="text-white" size={24} />
-                      </div>
-                      <div>
-                        <div className="font-bold text-foreground text-lg">500+</div>
-                        <div className="text-xs text-muted-foreground">Projects Done</div>
-                      </div>
-                    </div>
-                  </motion.div> */}
+  {/* 🔥 CENTERED BADGE (GLOBAL) */}
+  <div className="absolute top-10 left-1/2 -translate-x-1/2 z-20">
+    <motion.div 
+      initial={{ scale: 0, rotate: -10 }}
+      animate={{ scale: 1, rotate: 0 }}
+      transition={{ delay: 0.2, type: "spring" }}
+      className="inline-flex items-center gap-2 px-5 py-2.5 rounded-full bg-white/90 backdrop-blur-md shadow-xl border border-primary/20"
+    >
+      <motion.span 
+        animate={{ scale: [1, 1.3, 1] }}
+        transition={{ duration: 2, repeat: Infinity }}
+        className="w-2 h-2 rounded-full bg-gradient-to-r from-primary to-purple-500"
+      />
+      <span className="text-sm text-primary font-bold tracking-wider">
+        Premium Production Studio
+      </span>
+      <Sparkles size={14} className="text-primary" />
+    </motion.div>
+  </div>
 
-                  {/* <motion.div
-                    animate={{ y: [0, -8, 0] }}
-                    transition={{ duration: 3.5, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-                    className="absolute -bottom-6 left-1/4 bg-white rounded-2xl shadow-2xl p-4 border border-gray-100"
-                  >
-                    <div className="flex items-center gap-3">
-                      <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-purple-400 to-pink-500 flex items-center justify-center">
-                        <Users className="text-white" size={24} />
-                      </div>
-                      <div>
-                        <div className="font-bold text-foreground text-lg">150+</div>
-                        <div className="text-xs text-muted-foreground">Happy Clients</div>
-                      </div>
-                    </div>
-                  </motion.div> */}
-                </motion.div>
-              </motion.div>
-            </div>
-          </div>
-        </div>
+  {/* 🔽 MAIN GRID */}
+  <div className="max-w-6xl mx-auto pt-24">
+    <div className="grid lg:grid-cols-2 gap-16 items-center">
+      
+      {/* LEFT CONTENT */}
+      <motion.div
+        initial={{ opacity: 0, x: -50 }}
+        animate={{ opacity: 1, x: 0 }}
+        transition={{ duration: 0.8 }}
+        className="flex flex-col items-center lg:items-start text-center lg:text-left"
+      >
+        
+        {/* HEADING */}
+        <motion.h1 
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.3 }}
+          className="font-display text-5xl sm:text-6xl lg:text-8xl leading-none tracking-wider mb-8"
+        >
+          <motion.span 
+            initial={{ opacity: 0, x: -20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.4 }}
+            className="block"
+          >
+            WE CREATE
+          </motion.span>
+
+          <motion.span 
+            initial={{ opacity: 0, scale: 0.8 }}
+            animate={{ opacity: 1, scale: 1 }}
+            transition={{ delay: 0.5 }}
+            className="block text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-500 to-pink-500"
+          >
+            STRIKING
+          </motion.span>
+
+          <motion.span 
+            initial={{ opacity: 0, x: 20 }}
+            animate={{ opacity: 1, x: 0 }}
+            transition={{ delay: 0.6 }}
+            className="block"
+          >
+            VISUALS
+          </motion.span>
+        </motion.h1>
+        
+        {/* PARAGRAPH */}
+        <motion.p 
+          initial={{ opacity: 0 }}
+          animate={{ opacity: 1 }}
+          transition={{ delay: 0.7 }}
+          className="text-lg sm:text-xl text-muted-foreground max-w-xl leading-relaxed mb-10"
+        >
+          Award-winning film and TV ads production company crafting compelling visual stories 
+          that captivate audiences and elevate brands worldwide.
+        </motion.p>
+        
+        {/* BUTTONS */}
+        <motion.div 
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ delay: 0.8 }}
+          className="flex flex-col sm:flex-row items-center lg:items-start gap-4"
+        >
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Button asChild size="lg" className="bg-gradient-to-r from-primary to-purple-600 text-white font-bold px-8 h-14 shadow-2xl group">
+              <Link to="/portfolio" className="flex items-center gap-2">
+                <Play size={18} />
+                View Our Work
+                <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+              </Link>
+            </Button>
+          </motion.div>
+
+          <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
+            <Button asChild variant="outline" size="lg" className="border-2 border-primary/30 px-8 h-14 bg-white/80 backdrop-blur-sm font-bold">
+              <a href="https://calendly.com/indira-strikefilms/30min" target="_blank" rel="noopener noreferrer">
+                <Calendar size={18} className="mr-2" />
+                Book a Call
+              </a>
+            </Button>
+          </motion.div>
+        </motion.div>
+
+      </motion.div>
+
+      {/* RIGHT IMAGE */}
+      <motion.div
+        initial={{ opacity: 0, x: 50, scale: 0.9 }}
+        animate={{ opacity: 1, x: 0, scale: 1 }}
+        transition={{ duration: 0.8, delay: 0.4 }}
+        className="relative hidden lg:block"
+      >
+        <motion.div
+          animate={{ y: [0, -15, 0] }}
+          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+          className="relative"
+        >
+          <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-purple-500/30 rounded-3xl blur-2xl rotate-3" />
+          
+          <img
+            src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&q=80"
+            alt="Film Production"
+            className="relative rounded-3xl shadow-2xl border-4 border-white/50 w-full"
+          />
+        </motion.div>
+      </motion.div>
+
+    </div>
+  </div>
+</div>
 
         {/* Scroll indicator */}
-        <motion.div 
-          className="absolute bottom-8 left-1/2 -translate-x-1/2"
-          animate={{ y: [0, 10, 0] }}
-          transition={{ duration: 2, repeat: Infinity }}
-        >
-          <div className="w-6 h-10 rounded-full border-2 border-primary/30 flex items-start justify-center p-2 bg-white/50 backdrop-blur-sm">
-            <motion.div 
-              animate={{ y: [0, 8, 0] }}
-              transition={{ duration: 1.5, repeat: Infinity }}
-              className="w-1.5 h-3 rounded-full bg-gradient-to-b from-primary to-purple-500"
-            />
-          </div>
-        </motion.div>
+        
       </section>
 
       {/* Client Logos Section */}
@@ -415,6 +407,18 @@ const Index = () => {
                 </motion.div>
                 <h3 className="font-display text-2xl tracking-wide text-foreground mb-4">{service.title}</h3>
                 <p className="text-muted-foreground leading-relaxed">{service.description}</p>
+                {service.included?.length ? (
+                  <div className="mt-5 flex flex-wrap gap-2">
+                    {service.included.map((item) => (
+                      <span
+                        key={`${service.title}-${item}`}
+                        className={`inline-flex items-center rounded-full px-3 py-1 text-xs font-semibold text-white bg-gradient-to-r ${service.color}`}
+                      >
+                        {item}
+                      </span>
+                    ))}
+                  </div>
+                ) : null}
                 <Link 
                   to="/services" 
                   className="inline-flex items-center gap-2 mt-6 text-primary font-semibold group-hover:gap-3 transition-all"
@@ -484,7 +488,7 @@ const Index = () => {
             >
               <span className="inline-block px-4 py-1.5 rounded-full bg-purple-100 text-purple-600 text-sm font-bold tracking-widest uppercase mb-4">Portfolio</span>
               <h2 className="font-display text-4xl sm:text-5xl lg:text-6xl tracking-wider">
-                FEATURED <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-500">WORK</span>
+                WORK THAT <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-500">SPEAKS</span>
               </h2>
             </motion.div>
             <motion.div whileHover={{ scale: 1.05 }}>
@@ -496,44 +500,74 @@ const Index = () => {
             </motion.div>
           </div>
 
-          <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-            {featuredWork.map((work, index) => (
-              <motion.div
-                key={work.title}
-                initial={{ opacity: 0, y: 30 }}
-                whileInView={{ opacity: 1, y: 0 }}
-                viewport={{ once: true }}
-                transition={{ delay: index * 0.15 }}
-                whileHover={{ y: -10 }}
-                className="group relative overflow-hidden rounded-3xl aspect-[4/5] cursor-pointer shadow-xl"
+          {/* Filter Buttons */}
+          <div className="mb-12 flex flex-wrap gap-3">
+            {categories.map((category) => (
+              <motion.button
+                key={category}
+                onClick={() => setSelectedCategory(category)}
+                whileHover={{ scale: 1.05 }}
+                whileTap={{ scale: 0.95 }}
+                className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
+                  selectedCategory === category
+                    ? "bg-gradient-to-r from-primary to-purple-500 text-white shadow-lg"
+                    : "bg-white border-2 border-gray-200 text-foreground hover:border-primary"
+                }`}
               >
-                <img
-                  src={work.image}
-                  alt={work.title}
-                  className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
-                />
-                <div className={`absolute inset-0 bg-gradient-to-t ${work.color} opacity-0 group-hover:opacity-60 transition-opacity duration-300`} />
-                <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
-                <div className="absolute inset-0 flex flex-col justify-end p-6 lg:p-8">
-                  <motion.span 
-                    initial={{ x: -20, opacity: 0 }}
-                    whileInView={{ x: 0, opacity: 1 }}
-                    className={`inline-block w-fit px-3 py-1 rounded-full bg-gradient-to-r ${work.color} text-white text-xs font-semibold mb-3`}
-                  >
-                    {work.category}
-                  </motion.span>
-                  <h3 className="font-display text-2xl lg:text-3xl tracking-wide text-white">{work.title}</h3>
-                  <div className="mt-4 flex items-center gap-2 text-white opacity-0 group-hover:opacity-100 transition-opacity">
-                    <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
-                      <Play size={16} className="text-white ml-0.5" fill="white" />
-                    </div>
-                    <span className="text-sm font-medium">
-                      <Link to={work.link} target="_blank">Watch Project</Link></span>
-                  </div>
-                </div>
-              </motion.div>
+                {category}
+              </motion.button>
             ))}
           </div>
+
+          <Carousel
+            opts={{
+              align: "start",
+              loop: true,
+            }}
+            className="w-full"
+          >
+            <CarouselContent className="-ml-2 md:-ml-4">
+              {filteredWork.map((work, index) => (
+                <CarouselItem key={work.title} className="pl-2 md:pl-4 md:basis-1/2 lg:basis-1/3">
+                  <motion.div
+                    initial={{ opacity: 0, y: 30 }}
+                    whileInView={{ opacity: 1, y: 0 }}
+                    viewport={{ once: true }}
+                    transition={{ delay: index * 0.1 }}
+                    whileHover={{ y: -10 }}
+                    className="group relative overflow-hidden rounded-3xl aspect-[4/5] cursor-pointer shadow-xl h-full"
+                  >
+                    <img
+                      src={work.image}
+                      alt={work.title}
+                      className="absolute inset-0 w-full h-full object-cover transition-transform duration-700 group-hover:scale-110"
+                    />
+                    <div className={`absolute inset-0 bg-gradient-to-t ${work.color} opacity-0 group-hover:opacity-60 transition-opacity duration-300`} />
+                    <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/20 to-transparent" />
+                    <div className="absolute inset-0 flex flex-col justify-end p-6 lg:p-8">
+                      <motion.span 
+                        initial={{ x: -20, opacity: 0 }}
+                        whileInView={{ x: 0, opacity: 1 }}
+                        className={`inline-block w-fit px-3 py-1 rounded-full bg-gradient-to-r ${work.color} text-white text-xs font-semibold mb-3`}
+                      >
+                        {work.category}
+                      </motion.span>
+                      <h3 className="font-display text-2xl lg:text-3xl tracking-wide text-white">{work.title}</h3>
+                      <div className="mt-4 flex items-center gap-2 text-white opacity-0 group-hover:opacity-100 transition-opacity">
+                        <div className="w-10 h-10 rounded-full bg-white/20 backdrop-blur-sm flex items-center justify-center">
+                          <Play size={16} className="text-white ml-0.5" fill="white" />
+                        </div>
+                        <span className="text-sm font-medium">
+                          <Link to={work.link} target="_blank">Watch Project</Link></span>
+                      </div>
+                    </div>
+                  </motion.div>
+                </CarouselItem>
+              ))}
+            </CarouselContent>
+            <CarouselPrevious className="hidden md:flex" />
+            <CarouselNext className="hidden md:flex" />
+          </Carousel>
         </div>
       </section>
 
@@ -578,7 +612,7 @@ const Index = () => {
                 >
                   <item.icon className="text-white" size={36} />
                 </motion.div>
-                <div className="font-display text-5xl text-transparent bg-clip-text bg-gradient-to-r from-gray-200 to-gray-300 mb-2">
+                <div className="font-display text-5xl text-transparent bg-clip-text bg-gradient-to-r from-slate-500 to-slate-900 mb-2">
                   {item.step}
                 </div>
                 <h3 className="font-display text-2xl text-foreground mb-3">
@@ -715,11 +749,13 @@ const Index = () => {
             >
               <Rocket className="text-white" size={48} />
             </motion.div>
-            <h2 className="font-display text-4xl md:text-6xl text-foreground mb-6">
-              READY TO <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-500">CREATE</span>?
+            <h2 className="font-display text-2xl md:text-4xl text-foreground mb-6">
+              Let’s Create Something 
+              <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-500"> Extraordinary</span>?
             </h2>
             <p className="text-muted-foreground text-xl mb-10">
-              Let's craft something extraordinary together. Your vision, our expertise.
+              Your vision, our expertise crafted into visuals that truly make an impact.
+
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>

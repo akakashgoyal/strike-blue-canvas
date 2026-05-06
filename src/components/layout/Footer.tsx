@@ -27,8 +27,7 @@ const Footer = () => {
               />
             </Link>
             <p className="text-muted-foreground text-sm leading-relaxed">
-              Premium film and TV ads production company crafting compelling visual stories that captivate audiences worldwide.
-            </p>
+              A premium film and advertising studio crafting powerful visual stories that captivate, connect, and convert. </p>
             <div className="flex items-center gap-3">
               {[
                 { icon: Instagram, color: "hover:bg-pink-500" },

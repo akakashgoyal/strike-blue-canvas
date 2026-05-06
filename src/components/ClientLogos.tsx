@@ -1,12 +1,24 @@
 import { motion } from "framer-motion";
-import bobcardLogo from "@/assets/clients/bobcard.png";
-import laxmipatiLogo from "@/assets/clients/laxmipati.png";
-import obaLogo from "@/assets/clients/oba.png";
-import ltLogo from "@/assets/clients/lt.png";
-import nxteLogo from "@/assets/clients/nxte.png";
-import jswLogo from "@/assets/clients/jsw.png";
+import bobcardLogo from "@/assets/clients/BOBCARD.png";
+import laxmipatiLogo from "@/assets/clients/Laxmipati.png";
+import obaLogo from "@/assets/clients/OBA.png";
+import ltLogo from "@/assets/clients/LT.png";
+import nxteLogo from "@/assets/clients/NXTE.png";
+import jswLogo from "@/assets/clients/JSW.png";
+import Bob from "@/assets/clients/BOB.png"
+import IIBF from "@/assets/clients/IIBF.png";
 
 const clients = [
+  {
+    name: "Bank Of Baroda",
+    logo: Bob,
+    color: "from-orange-400 to-red-500"
+  },
+  {
+    name: "IIBF",
+    logo: IIBF,
+    color: "from-green-400 to-emerald-500"
+  },
   { 
     name: "BOBCARD", 
     logo: bobcardLogo,
@@ -17,25 +29,26 @@ const clients = [
     logo: laxmipatiLogo,
     color: "from-pink-400 to-rose-500"
   },
-  { 
-    name: "OBA Electric Vehicle", 
-    logo: obaLogo,
-    color: "from-cyan-400 to-blue-500"
-  },
+  
   { 
     name: "L&T", 
     logo: ltLogo,
     color: "from-blue-400 to-indigo-500"
   },
   { 
-    name: "NXT-E Mobility", 
-    logo: nxteLogo,
-    color: "from-green-400 to-emerald-500"
-  },
-  { 
     name: "JSW", 
     logo: jswLogo,
     color: "from-blue-400 to-indigo-500"
+  },
+  { 
+    name: "OBA Electric Vehicle", 
+    logo: obaLogo,
+    color: "from-cyan-400 to-blue-500"
+  },
+  { 
+    name: "NXT-E Mobility", 
+    logo: nxteLogo,
+    color: "from-[#113e5d] to-[#f29200]"
   },
 ];
 
@@ -62,7 +75,7 @@ const ClientLogos = () => {
           </p>
         </motion.div>
 
-        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-6 gap-8">
+        <div className="grid grid-cols-2 md:grid-cols-3 lg:grid-cols-5 gap-8">
           {clients.map((client, index) => (
             <motion.div
               key={client.name}
@@ -77,32 +90,35 @@ const ClientLogos = () => {
                 {/* Gradient border on hover */}
                 <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${client.color} opacity-0 group-hover:opacity-100 transition-opacity -z-10 blur-xl`} />
                 
-                <div className="h-16 flex items-center justify-center">
+                <div className="h-48 gap-8 flex items-center justify-center">
                   <img
                     src={client.logo}
                     alt={client.name}
-                    className="max-h-12 max-w-full object-contain filter grayscale group-hover:grayscale-0 transition-all duration-300"
+                    className="h-[500px] w-[500px] object-contain transition-all duration-300"
                   />
+                  
                 </div>
+
                 <p className="text-center text-xs text-muted-foreground mt-3 font-medium opacity-0 group-hover:opacity-100 transition-opacity">
                   {client.name}
                 </p>
+                
               </div>
             </motion.div>
           ))}
         </div>
 
         {/* Animated background elements */}
-        <motion.div
+        {/* <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
           className="absolute -top-20 -right-20 w-64 h-64 border-4 border-primary/5 rounded-full"
-        />
-        <motion.div
-          animate={{ rotate: -360 }}
-          transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
-          className="absolute -bottom-20 -left-20 w-80 h-80 border-4 border-purple-500/5 rounded-full"
-        />
+        /> */}
+          {/* <motion.div
+            animate={{ rotate: -360 }}
+            transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
+            className="absolute -bottom-20 -left-20 w-80 h-80 border-4 border-purple-500/5 rounded-full"
+          /> */}
       </div>
     </section>
   );
