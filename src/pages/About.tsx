@@ -7,23 +7,38 @@ import ClientLogos from "@/components/ClientLogos";
 import usePageTitle from "@/hooks/usePageTitle";
 
 const values = [
-  { icon: Lightbulb, title: "Innovation", description: "We push creative boundaries to deliver fresh, impactful visual storytelling.", color: "from-yellow-400 to-orange-500" },
-  { icon: Award, title: "Excellence", description: "Every frame we craft meets the highest standards of quality and artistry.", color: "from-blue-400 to-cyan-500" },
-  { icon: Users, title: "Collaboration", description: "We work closely with our clients to bring their unique vision to life.", color: "from-purple-400 to-pink-500" },
-  { icon: Heart, title: "Passion", description: "Our love for filmmaking drives us to create content that truly resonates.", color: "from-red-400 to-rose-500" },
+  { icon: Lightbulb, title: "Innovation", description: `We don’t follow trends, we create them.
+Every project is an opportunity to push creative boundaries and bring fresh thinking to the screen.
+`, color: "from-yellow-400 to-orange-500" },
+  { icon: Award, title: "Excellence", description: `Good isn’t enough.
+From concept to final cut, we obsess over every detail to deliver work that meets the highest standards of craft and quality.
+`, color: "from-blue-400 to-cyan-500" },
+  { icon: Users, title: "Collaboration", description: `Great work is never created alone.
+ We work closely with our clients, turning ideas into powerful stories through true creative partnership.
+`, color: "from-purple-400 to-pink-500" },
+  { icon: Heart, title: "Passion", description: `This isn’t just what we do, it's what drives us.
+ Our passion for storytelling fuels everything we create, ensuring every piece of content feels real and impactful.
+
+`, color: "from-red-400 to-rose-500" },
 ];
 
 const team = [
-  { name: "Alex Kumar", role: "Founder & Creative Director", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop", color: "from-blue-400 to-cyan-500", bio: "15+ years in film production" },
-  { name: "Priya Sharma", role: "Head of Production", image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop", color: "from-purple-400 to-pink-500", bio: "Award-winning producer" },
-  { name: "Raj Patel", role: "Lead Cinematographer", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop", color: "from-orange-400 to-red-500", bio: "Visual storytelling expert" },
-  { name: "Sarah Chen", role: "Post-Production Lead", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop", color: "from-green-400 to-teal-500", bio: "VFX & editing specialist" },
+  { name: "Sagar Srivastwa", role: "Founder", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop", color: "from-blue-400 to-cyan-500", bio: "15+ years in film production" },
+  { name: "Jagat Singh", role: "Writer", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop", color: "from-blue-400 to-cyan-500", bio: "15+ years in film production" },
+  { name: "Ashish Asthana", role: "Writer & Creative Producer", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop", color: "from-blue-400 to-cyan-500", bio: "15+ years in film production" },
+  { name: "Shailendra Tiwari", role: "Creative Director", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop", color: "from-blue-400 to-cyan-500", bio: "15+ years in film production" },
+  { name: "Rao Devender Singh", role: "Director", image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop", color: "from-purple-400 to-pink-500", bio: "Award-winning producer" },
+  { name: "Vinit Vaibhav Rao", role: "Creative & Graphics", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop", color: "from-orange-400 to-red-500", bio: "Visual storytelling expert" },
+  { name: "Prasanna Tiwari", role: "Executive Producer", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop", color: "from-green-400 to-teal-500", bio: "VFX & editing specialist" },
+  { name: "Umang Beena Saxena", role: "Copywriter", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop", color: "from-green-400 to-teal-500", bio: "VFX & editing specialist" },
+  { name: "Abhishek Asthana", role: "Copywriter", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop", color: "from-green-400 to-teal-500", bio: "VFX & editing specialist" },
+  { name: "Sweekriti Bharti", role: "Executive Producer", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop", color: "from-green-400 to-teal-500", bio: "VFX & editing specialist" },
+  { name: "Nidhi Jain", role: "Executive Producer", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop", color: "from-green-400 to-teal-500", bio: "VFX & editing specialist" },
 ];
 
 const stats = [
-  { number: "15+", label: "Years Experience", icon: Star },
+  { number: "7+", label: "Years Experience", icon: Star },
   { number: "500+", label: "Projects Completed", icon: Film },
-  { number: "25+", label: "Industry Awards", icon: Award },
   { number: "150+", label: "Happy Clients", icon: Users },
 ];
 
@@ -63,33 +78,9 @@ const About = () => {
         />
         
         {/* Floating Icons */}
-        <motion.div 
-          animate={{ y: [0, -20, 0], rotate: [0, 10, 0] }}
-          transition={{ duration: 4, repeat: Infinity }}
-          className="absolute top-32 right-32 hidden lg:block"
-        >
-          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-yellow-400 to-orange-500 shadow-xl flex items-center justify-center">
-            <Star className="text-white" size={28} />
-          </div>
-        </motion.div>
-        <motion.div 
-          animate={{ y: [0, 20, 0], rotate: [0, -10, 0] }}
-          transition={{ duration: 5, repeat: Infinity }}
-          className="absolute bottom-40 left-32 hidden lg:block"
-        >
-          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-purple-400 to-pink-500 shadow-xl flex items-center justify-center">
-            <Film className="text-white" size={24} />
-          </div>
-        </motion.div>
-        <motion.div 
-          animate={{ y: [0, -15, 0], x: [0, 10, 0] }}
-          transition={{ duration: 6, repeat: Infinity }}
-          className="absolute top-1/2 left-20 hidden xl:block"
-        >
-          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-400 to-emerald-500 shadow-lg flex items-center justify-center">
-            <Zap className="text-white" size={20} />
-          </div>
-        </motion.div>
+        
+        
+        
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -146,11 +137,7 @@ const About = () => {
                 className="relative"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-purple-500/30 rounded-3xl blur-2xl transform rotate-3" />
-                <img
-                  src="https://images.unsplash.com/photo-1536240478700-b869070f9279?w=800&h=600&fit=crop"
-                  alt="Strike Production Studio"
-                  className="relative rounded-3xl shadow-2xl border-4 border-white/50 w-full"
-                />
+                
                 
                 {/* Floating Cards */}
                 <motion.div
@@ -158,7 +145,7 @@ const About = () => {
                   transition={{ duration: 3, repeat: Infinity }}
                   className="absolute -bottom-4 -right-4 md:-bottom-6 md:-right-6 bg-white border border-border p-4 md:p-6 rounded-2xl shadow-2xl"
                 >
-                  <div className="font-display text-2xl md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-500">15+</div>
+                  <div className="font-display text-2xl md:text-4xl text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-500">7+</div>
                   <div className="text-muted-foreground text-xs md:text-sm">Years of Excellence</div>
                 </motion.div>
                 
@@ -184,7 +171,7 @@ const About = () => {
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=1920&q=80')] bg-cover bg-center opacity-10" />
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
+          <div className="mx-auto grid max-w-5xl grid-cols-1 gap-8 sm:grid-cols-3 justify-items-center">
             {stats.map((stat, index) => (
               <motion.div
                 key={stat.label}
@@ -192,7 +179,7 @@ const About = () => {
                 whileInView={{ opacity: 1, scale: 1 }}
                 viewport={{ once: true }}
                 transition={{ delay: index * 0.1, type: "spring" }}
-                className="text-center"
+                className="w-full max-w-xs text-center"
               >
                 <motion.div 
                   whileHover={{ scale: 1.1, rotate: 5 }}
@@ -219,17 +206,23 @@ const About = () => {
             >
               <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-bold tracking-widest uppercase mb-4">Our Story</span>
               <h2 className="font-display text-4xl md:text-5xl text-foreground mb-6">
-                FROM PASSION TO <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-500">EXCELLENCE</span>
+                From Vision to  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-500">Impact</span>
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed text-lg">
                 <p>
-                  Strike was born from a passion for storytelling and a vision to redefine what's possible in film and advertising production. What started as a small creative studio has grown into one of the industry's most respected production houses.
+                  Strike Films Media & Advertising was founded by Sagar Shrivastwa with a simple belief brands don’t grow through content, they grow through powerful stories.
+
                 </p>
                 <p>
-                  Our journey has been marked by countless collaborations with leading brands, talented artists, and visionary creators. Each project has shaped our approach: combine technical excellence with creative innovation.
+                  What began as a passion for filmmaking and storytelling has evolved into a Mumbai-based creative and production house & Advertising Agency delivering high-impact ad films, brand films, and digital content for modern brands.
                 </p>
                 <p>
-                  Today, we continue to push boundaries, embracing new technologies and storytelling techniques while staying true to our core belief – that great content has the power to move people and transform businesses.
+                  At Strike, we don’t just create visuals, we build narratives that connect, influence, and leave a lasting impression. Every project is approached with a blend of creative thinking, strategic insight, and cinematic execution.
+                </p>
+                <p>
+                  From working with emerging brands to established businesses, our goal has remained the same: to create work that doesn’t just look good but drives real results.
+                </p><p>
+                  Today, under the vision of its founder, Strike Films continues to push boundaries in film production, advertising, and brand storytelling, helping brands stand out in an increasingly crowded digital world.
                 </p>
               </div>
             </motion.div>
@@ -291,7 +284,8 @@ const About = () => {
               </div>
               <h3 className="font-display text-3xl text-white mb-4">Our Mission</h3>
               <p className="text-white/80 leading-relaxed text-lg">
-                To create compelling visual content that tells powerful stories, drives brand success, and leaves a lasting impact on audiences worldwide. We strive to be the creative partner of choice for brands seeking excellence.
+                To turn ideas into impactful visual stories that move people and grow brands.
+
               </p>
             </motion.div>
             
@@ -308,7 +302,7 @@ const About = () => {
               </div>
               <h3 className="font-display text-3xl text-white mb-4">Our Vision</h3>
               <p className="text-white/80 leading-relaxed text-lg">
-                To be the world's most innovative and trusted production house, setting new standards in filmmaking and advertising. We envision a future where every brand has access to world-class visual storytelling.
+                To redefine storytelling in film and advertising through creativity, innovation, and uncompromising quality.
               </p>
             </motion.div>
           </div>
@@ -316,16 +310,18 @@ const About = () => {
       </section>
 
       {/* Timeline/Milestones - Redesigned with 3D effect */}
-      <section className="py-24 bg-gradient-to-b from-gray-50 via-white to-gray-50 relative overflow-hidden">
+
+      
+      {/* <section className="py-24 bg-gradient-to-b from-gray-50 via-white to-gray-50 relative overflow-hidden">
         {/* Decorative elements */}
-        <div className="absolute inset-0 opacity-30">
+        {/* <div className="absolute inset-0 opacity-30">
           <div className="absolute inset-0" style={{ 
             backgroundImage: 'radial-gradient(circle at 2px 2px, rgba(99, 102, 241, 0.15) 1px, transparent 0)',
             backgroundSize: '40px 40px'
           }} />
-        </div>
+        </div> */}
         
-        <motion.div
+        {/* <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 100, repeat: Infinity, ease: "linear" }}
           className="absolute top-20 left-20 w-64 h-64 border-2 border-dashed border-primary/10 rounded-full"
@@ -357,12 +353,12 @@ const About = () => {
             <p className="text-muted-foreground text-lg max-w-2xl mx-auto">
               A timeline of achievements that shaped our journey to becoming industry leaders
             </p>
-          </motion.div>
+          </motion.div> */}
 
           {/* 3D Timeline Grid */}
-          <div className="relative">
+          {/* <div className="relative"> */}
             {/* Central Timeline Line */}
-            <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-purple-500 to-pink-500 hidden lg:block transform -translate-x-1/2 rounded-full" />
+            {/* <div className="absolute left-1/2 top-0 bottom-0 w-1 bg-gradient-to-b from-primary via-purple-500 to-pink-500 hidden lg:block transform -translate-x-1/2 rounded-full" />
             
             <div className="space-y-8 lg:space-y-0">
               {milestones.map((milestone, index) => (
@@ -373,9 +369,9 @@ const About = () => {
                   transition={{ delay: index * 0.15, type: "spring", stiffness: 100 }}
                   viewport={{ once: true }}
                   className={`relative lg:grid lg:grid-cols-2 lg:gap-12 ${index % 2 === 0 ? '' : 'lg:text-right'} lg:mb-16`}
-                >
+                > */}
                   {/* Timeline Node */}
-                  <motion.div 
+                  {/* <motion.div 
                     className="absolute left-1/2 top-8 transform -translate-x-1/2 z-20 hidden lg:block"
                     whileHover={{ scale: 1.2 }}
                   >
@@ -387,20 +383,20 @@ const About = () => {
                         className="absolute inset-0 rounded-full bg-primary"
                       />
                     </div>
-                  </motion.div>
+                  </motion.div> */}
                   
                   {/* Content Card */}
-                  <motion.div
+                  {/* <motion.div
                     whileHover={{ scale: 1.02, y: -5 }}
                     className={`relative ${index % 2 === 0 ? 'lg:pr-16' : 'lg:col-start-2 lg:pl-16'}`}
-                  >
-                    <div className="relative group">
+                  > */}
+                    {/* <div className="relative group"> */}
                       {/* 3D Shadow effect */}
-                      <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-purple-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-4" />
+                      {/* <div className="absolute inset-0 bg-gradient-to-r from-primary/20 to-purple-500/20 rounded-3xl blur-xl opacity-0 group-hover:opacity-100 transition-opacity transform translate-y-4" />
                       
-                      <div className="relative p-8 bg-white rounded-3xl shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 overflow-hidden">
+                      <div className="relative p-8 bg-white rounded-3xl shadow-xl border border-gray-100 hover:shadow-2xl transition-all duration-300 overflow-hidden"> */}
                         {/* Gradient accent */}
-                        <div className={`absolute top-0 ${index % 2 === 0 ? 'right-0' : 'left-0'} w-32 h-32 bg-gradient-to-br from-primary/10 to-purple-500/10 rounded-full -translate-y-1/2 ${index % 2 === 0 ? 'translate-x-1/2' : '-translate-x-1/2'}`} />
+                        {/* <div className={`absolute top-0 ${index % 2 === 0 ? 'right-0' : 'left-0'} w-32 h-32 bg-gradient-to-br from-primary/10 to-purple-500/10 rounded-full -translate-y-1/2 ${index % 2 === 0 ? 'translate-x-1/2' : '-translate-x-1/2'}`} />
                         
                         <div className="relative">
                           <motion.div 
@@ -411,18 +407,18 @@ const About = () => {
                           >
                             <Calendar size={16} />
                             {milestone.year}
-                          </motion.div>
+                          </motion.div> */}
                           
-                          <h3 className="font-display text-2xl md:text-3xl text-foreground mb-3 group-hover:text-primary transition-colors">
+                          {/* <h3 className="font-display text-2xl md:text-3xl text-foreground mb-3 group-hover:text-primary transition-colors">
                             {milestone.title}
                           </h3>
                           
                           <p className="text-muted-foreground text-lg leading-relaxed">
                             {milestone.desc}
-                          </p>
+                          </p> */}
                           
                           {/* Decorative icon */}
-                          <motion.div 
+                          {/* <motion.div 
                             animate={{ rotate: [0, 10, 0] }}
                             transition={{ duration: 3, repeat: Infinity }}
                             className={`absolute bottom-4 ${index % 2 === 0 ? 'right-4' : 'lg:left-4 right-4'} opacity-10 group-hover:opacity-30 transition-opacity`}
@@ -432,16 +428,16 @@ const About = () => {
                         </div>
                       </div>
                     </div>
-                  </motion.div>
+                  </motion.div> */}
                   
                   {/* Empty space for alternating layout */}
-                  {index % 2 === 0 && <div className="hidden lg:block" />}
+                  {/* {index % 2 === 0 && <div className="hidden lg:block" />}
                 </motion.div>
               ))}
             </div>
           </div>
-        </div>
-      </section>
+        </div> */}
+      {/* </section> */}
 
       {/* Values */}
       <section className="py-24 bg-white relative overflow-hidden">
@@ -465,7 +461,8 @@ const About = () => {
               WHAT WE <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-500">STAND FOR</span>
             </h2>
             <p className="text-muted-foreground text-lg">
-              The principles that guide everything we do at Strike.
+              The principles behind every idea, every frame, and every story we create.
+
             </p>
           </motion.div>
 
@@ -580,9 +577,9 @@ const About = () => {
             </p>
           </motion.div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6 max-w-4xl mx-auto">
             {[
-              { icon: Award, title: "Award Winning", desc: "Multiple industry awards for creative excellence", color: "from-yellow-400 to-orange-500" },
+              
               { icon: Zap, title: "Fast Delivery", desc: "Quick turnaround without compromising quality", color: "from-blue-400 to-cyan-500" },
               { icon: Heart, title: "Client First", desc: "Your vision is our priority at every step", color: "from-pink-400 to-rose-500" },
               { icon: CheckCircle2, title: "Quality Assured", desc: "Premium production standards guaranteed", color: "from-green-400 to-emerald-500" },
@@ -638,16 +635,18 @@ const About = () => {
               <Heart className="text-white" size={48} />
             </motion.div>
             <h2 className="font-display text-4xl md:text-5xl text-white mb-6">
-              WANT TO <span className="text-yellow-300">WORK</span> WITH US?
+              Let’s Build Something That 
+ <span className="text-yellow-300"> Stands Out</span>
             </h2>
             <p className="text-white/90 text-lg mb-8">
-              Let's create something extraordinary together.
+              Bring us your idea, we'll turn it into powerful visual storytelling that drives real impact.
+
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <motion.div whileHover={{ scale: 1.05 }}>
                 <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 font-bold px-10 shadow-2xl">
                   <Link to="/contact">
-                    Get in Touch
+                    Start a Project
                     <ArrowRight className="ml-2" size={18} />
                   </Link>
                 </Button>

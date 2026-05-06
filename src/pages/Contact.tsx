@@ -70,33 +70,9 @@ const Contact = () => {
         />
         
         {/* Floating Icons */}
-        <motion.div 
-          animate={{ y: [0, -20, 0], rotate: [0, 10, 0] }}
-          transition={{ duration: 4, repeat: Infinity }}
-          className="absolute top-32 right-32 hidden lg:block"
-        >
-          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-400 to-pink-500 shadow-xl flex items-center justify-center">
-            <MessageCircle className="text-white" size={28} />
-          </div>
-        </motion.div>
-        <motion.div 
-          animate={{ y: [0, 20, 0], rotate: [0, -10, 0] }}
-          transition={{ duration: 5, repeat: Infinity }}
-          className="absolute bottom-40 left-40 hidden lg:block"
-        >
-          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-400 to-cyan-500 shadow-xl flex items-center justify-center">
-            <Mail className="text-white" size={24} />
-          </div>
-        </motion.div>
-        <motion.div 
-          animate={{ y: [0, -15, 0], x: [0, 10, 0] }}
-          transition={{ duration: 6, repeat: Infinity }}
-          className="absolute top-1/2 left-24 hidden xl:block"
-        >
-          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-400 to-emerald-500 shadow-lg flex items-center justify-center">
-            <Phone className="text-white" size={20} />
-          </div>
-        </motion.div>
+        
+        
+       
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -113,10 +89,12 @@ const Contact = () => {
                 ✨ Get In Touch
               </motion.span>
               <h1 className="font-display text-5xl md:text-7xl text-foreground mb-6">
-                LET'S <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-500 to-pink-500">TALK</span>
+                Let’s Build Something That 
+ <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-500 to-pink-500"> Stands Out</span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-xl leading-relaxed mb-8">
-                Ready to bring your vision to life? We'd love to hear about your project. Get in touch and let's create something amazing together.
+                Bring us your idea we’ll turn it into powerful visual storytelling that captures attention and drives real impact.
+
               </p>
               
               {/* Quick Actions */}
@@ -125,7 +103,7 @@ const Contact = () => {
                   <Button asChild size="lg" className="bg-gradient-to-r from-primary to-purple-600 text-white font-bold shadow-xl">
                     <a href="https://calendly.com/indira-strikefilms/30min" target="_blank" rel="noopener noreferrer">
                       <Calendar className="mr-2" size={20} />
-                      Schedule a Call
+                      Start a Project
                     </a>
                   </Button>
                 </motion.div>
@@ -216,8 +194,12 @@ const Contact = () => {
               viewport={{ once: true }}
             >
               <h2 className="font-display text-3xl md:text-4xl text-foreground mb-8">
-                SEND US A <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-500">MESSAGE</span>
+                Tell us about your  <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-500">Project</span>
               </h2>
+               <p className="text-muted-foreground text-xl mb-10">
+              Your brief is important to us. 
+
+            </p>
               <form onSubmit={handleSubmit} className="space-y-6">
                 <div className="grid md:grid-cols-2 gap-6">
                   <div className="space-y-2">

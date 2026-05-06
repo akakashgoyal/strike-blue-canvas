@@ -261,10 +261,7 @@ const Portfolio = () => {
                   <div className="p-6">
                     <div className="flex items-center justify-between mb-2">
                       <span className="text-xs text-muted-foreground font-medium uppercase tracking-wider">{item.client}</span>
-                      <div className="flex items-center gap-1.5 text-muted-foreground">
-                        <Eye size={14} />
-                        <span className="text-xs font-medium">{item.views}</span>
-                      </div>
+                      
                     </div>
                     <h3 className="font-display text-xl text-foreground group-hover:text-primary transition-colors leading-tight">{item.title}</h3>
                     
