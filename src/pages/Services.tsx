@@ -8,61 +8,69 @@ import usePageTitle from "@/hooks/usePageTitle";
 
 const serviceCategories = [
   {
-    icon: Sparkles,
-    title: "Creative Development",
-    description: "Transform your ideas into compelling concepts with our expert creative team.",
-    color: "from-yellow-400 to-orange-500",
-    bgColor: "bg-yellow-50",
-    services: [
-      { name: "Campaign Ideation & Creative Strategy", icon: Lightbulb },
-      { name: "Scriptwriting & Screenplay Development", icon: Film },
-      { name: "Storyboarding & Narrative Structuring", icon: Video },
-      { name: "Concept Development & Visual Planning", icon: Camera },
-      { name: "Creative Direction & Brand Alignment", icon: Megaphone },
-    ],
-  },
-  {
     icon: Film,
     title: "Film & Video Production",
     description: "Full-service production capabilities for every type of visual content.",
     color: "from-blue-400 to-cyan-500",
     bgColor: "bg-blue-50",
     services: [
-      { name: "Full-Service Video Production", icon: Video },
-      { name: "Direction & Cinematography", icon: Camera },
-      { name: "TV Commercials & Digital Ad Films", icon: Tv },
-      { name: "Corporate Films & Brand Films", icon: Film },
-      { name: "Product Showcase Videos & Testimonials", icon: Megaphone },
+      { name: "Ad Film & TV Commercials (TVCs)", icon: Video },
+      { name: "Brand Film & Corporate Videos", icon: Camera },
+      { name: "Reels and Digital Content Creation", icon: Tv },
+      { name: "Product Shoots & Commercial Photography", icon: Film },
+      { name: "Direction, Cinematography & Post-Production", icon: Megaphone },
     ],
   },
   {
+    icon: Sparkles,
+    title: "Digital Marketing",
+    description: "We don’t just market—we scale your brand with strategies designed to increase visibility, engagement, and conversions.",
+    color: "from-yellow-400 to-orange-500",
+    bgColor: "bg-yellow-50",
+    services: [
+      { name: "Social Media Marketing & Management", icon: Lightbulb },
+      { name: "Influencer Marketing Campaigns", icon: Film },
+      { name: "Paid Advertising (Meta, Google, Youtube)", icon: Video },
+      { name: "Performance Marketing & Analytics", icon: Camera },
+      { name: "Content Optimization & Growth Strategy", icon: Megaphone },
+    ],
+  },
+  
+  {
     icon: Globe,
-    title: "Growth & Media Add-Ons",
-    description: "Extend your reach and maximize impact with our digital services.",
+    title: "Branding & Strategy",
+    description: "Build a brand that stands out, connects, and drives long-term growth.",
     color: "from-purple-400 to-pink-500",
     bgColor: "bg-purple-50",
     services: [
-      { name: "Social Media Optimization & Cut-downs", icon: Globe },
-      { name: "Influencer Marketing with Relevant Creators", icon: Users },
-      { name: "Localization & Multilingual Dubbing", icon: Globe },
-      { name: "Email Marketing Campaigns", icon: Mail },
-      { name: "AI Agents & Automation Solutions", icon: Bot },
+      { name: "Brand Positioning & Market Strategy", icon: Globe },
+      { name: "Brand Identity & Visual Language", icon: Users },
+      { name: "Personal Branding", icon: Globe },
+      { name: "Go-to-Market Strategy", icon: Mail },
+      { name: "Campaign planning & Creative Direction", icon: Bot },
     ],
   },
 ];
 
 const processSteps = [
-  { step: "01", title: "Discovery", desc: "Understanding your brand and objectives", color: "from-blue-400 to-cyan-500", icon: Lightbulb },
-  { step: "02", title: "Concept", desc: "Developing creative direction and strategy", color: "from-purple-400 to-pink-500", icon: Sparkles },
-  { step: "03", title: "Production", desc: "Executing with precision and artistry", color: "from-orange-400 to-red-500", icon: Film },
-  { step: "04", title: "Delivery", desc: "Polished final content ready to deploy", color: "from-green-400 to-teal-500", icon: Zap },
+  { step: "01", title: "Discovery", desc: "We start by understanding your brand, audience, and objectives—so every decision is rooted in purpose, not guesswork.", color: "from-blue-400 to-cyan-500", icon: Lightbulb },
+  { step: "02", title: "Concept", desc: "We develop strong creative directions, scripts, and strategies that shape how your story will be told.", color: "from-purple-400 to-pink-500", icon: Sparkles },
+  { step: "03", title: "Production", desc: `From shoot to execution, we bring ideas to life with precision, creativity, and attention to every detail.
+`, color: "from-orange-400 to-red-500", icon: Film },
+  { step: "04", title: "Delivery", desc: `We refine, finalize, and deliver polished content—ready to perform across platforms and drive results.
+`, color: "from-green-400 to-teal-500", icon: Zap },
 ];
 
 const whyChooseUs = [
-  { icon: Award, title: "Award Winning", desc: "Multiple industry awards for creative excellence", color: "from-yellow-400 to-orange-500" },
-  { icon: Clock, title: "On-Time Delivery", desc: "We respect your deadlines and deliver as promised", color: "from-blue-400 to-cyan-500" },
-  { icon: Heart, title: "Client Focused", desc: "Your vision is our priority at every step", color: "from-pink-400 to-rose-500" },
-  { icon: Target, title: "Results Driven", desc: "We measure success by your ROI", color: "from-green-400 to-emerald-500" },
+  { icon: Award, title: "Creative That Performs", desc: `We don’t create content for the sake of it.
+ Every film is designed to capture attention and drive real results.
+`, color: "from-yellow-400 to-orange-500" },
+  { icon: Clock, title: "End-to-End Expertise", desc: `From idea to final delivery, everything is handled in-house—ensuring quality, consistency, and speed.
+`, color: "from-blue-400 to-cyan-500" },
+  { icon: Heart, title: "Built Around You", desc: `Your vision leads the process.
+ We collaborate closely to bring it to life exactly how it should be.`, color: "from-pink-400 to-rose-500" },
+  { icon: Target, title: "On Time. Every Time.", desc: `We respect timelines as much as creativity—because great work means nothing if it’s late.
+`, color: "from-green-400 to-emerald-500" },
 ];
 
 const testimonials = [
@@ -118,42 +126,10 @@ const Services = () => {
         />
         
         {/* Floating Icons */}
-        <motion.div 
-          animate={{ y: [0, -30, 0], rotate: [0, 15, 0], scale: [1, 1.1, 1] }}
-          transition={{ duration: 4, repeat: Infinity, ease: "easeInOut" }}
-          className="absolute top-24 right-24 hidden lg:block"
-        >
-          <div className="w-20 h-20 rounded-3xl bg-gradient-to-br from-yellow-400 to-orange-500 shadow-2xl flex items-center justify-center">
-            <Camera className="text-white" size={36} />
-          </div>
-        </motion.div>
-        <motion.div 
-          animate={{ y: [0, 25, 0], rotate: [0, -15, 0], scale: [1, 1.1, 1] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-          className="absolute bottom-32 left-24 hidden lg:block"
-        >
-          <div className="w-18 h-18 rounded-3xl bg-gradient-to-br from-purple-400 to-pink-500 shadow-2xl flex items-center justify-center p-4">
-            <Film className="text-white" size={32} />
-          </div>
-        </motion.div>
-        <motion.div 
-          animate={{ y: [0, -20, 0], x: [0, 10, 0] }}
-          transition={{ duration: 6, repeat: Infinity, ease: "easeInOut", delay: 1 }}
-          className="absolute top-1/3 left-32 hidden xl:block"
-        >
-          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-green-400 to-emerald-500 shadow-xl flex items-center justify-center">
-            <Play className="text-white" size={24} />
-          </div>
-        </motion.div>
-        <motion.div 
-          animate={{ y: [0, 20, 0], x: [0, -15, 0] }}
-          transition={{ duration: 5, repeat: Infinity, ease: "easeInOut", delay: 1.5 }}
-          className="absolute bottom-1/4 right-40 hidden xl:block"
-        >
-          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-blue-400 to-cyan-500 shadow-xl flex items-center justify-center">
-            <Sparkles className="text-white" size={28} />
-          </div>
-        </motion.div>
+        
+        
+        
+        
         
         {/* Grid Pattern Overlay */}
         <div className="absolute inset-0 opacity-20">
@@ -190,7 +166,7 @@ const Services = () => {
                   animate={{ opacity: 1, x: 0 }}
                   transition={{ delay: 0.4 }}
                 >
-                  COMPLETE
+                  360 DEGREE
                 </motion.span>
                 <br />
                 <motion.span 
@@ -229,7 +205,7 @@ const Services = () => {
                 <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                   <Button asChild size="lg" className="bg-gradient-to-r from-primary to-purple-600 hover:opacity-90 text-white font-bold px-8 py-6 text-lg shadow-2xl">
                     <Link to="/contact">
-                      Get Started
+                      Start a Project
                       <ArrowRight className="ml-2" size={20} />
                     </Link>
                   </Button>
@@ -264,38 +240,9 @@ const Services = () => {
                   className="relative rounded-3xl shadow-2xl border-4 border-white/50"
                 />
                 
-                {/* Floating Stats Cards */}
-                <motion.div
-                  animate={{ y: [0, -10, 0], x: [0, 5, 0] }}
-                  transition={{ duration: 3, repeat: Infinity, ease: "easeInOut" }}
-                  className="absolute -left-8 top-1/4 bg-white rounded-2xl shadow-xl p-4 border border-gray-100"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-yellow-400 to-orange-500 flex items-center justify-center">
-                      <Award className="text-white" size={24} />
-                    </div>
-                    <div>
-                      <div className="font-bold text-foreground">50+</div>
-                      <div className="text-sm text-muted-foreground">Awards Won</div>
-                    </div>
-                  </div>
-                </motion.div>
                 
-                <motion.div
-                  animate={{ y: [0, 10, 0], x: [0, -5, 0] }}
-                  transition={{ duration: 4, repeat: Infinity, ease: "easeInOut", delay: 0.5 }}
-                  className="absolute -right-8 bottom-1/4 bg-white rounded-2xl shadow-xl p-4 border border-gray-100"
-                >
-                  <div className="flex items-center gap-3">
-                    <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-green-400 to-emerald-500 flex items-center justify-center">
-                      <CheckCircle2 className="text-white" size={24} />
-                    </div>
-                    <div>
-                      <div className="font-bold text-foreground">500+</div>
-                      <div className="text-sm text-muted-foreground">Projects Done</div>
-                    </div>
-                  </div>
-                </motion.div>
+                
+                
               </motion.div>
             </motion.div>
           </div>
@@ -311,7 +258,7 @@ const Services = () => {
             viewport={{ once: true }}
             className="text-center max-w-3xl mx-auto mb-20"
           >
-            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-bold tracking-widest uppercase mb-4">What We Offer</span>
+            <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-bold tracking-widest uppercase mb-4">Our Services</span>
             <h2 className="font-display text-4xl md:text-6xl text-foreground mb-6">
               OUR <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-500">SERVICES</span>
             </h2>
@@ -429,10 +376,10 @@ const Services = () => {
           >
             <span className="inline-block px-4 py-1.5 rounded-full bg-green-100 text-green-600 text-sm font-bold tracking-widest uppercase mb-4">Why Strike</span>
             <h2 className="font-display text-4xl md:text-6xl text-foreground mb-6">
-              WHY <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-emerald-500">CHOOSE US</span>
+              What sets us <span className="text-transparent bg-clip-text bg-gradient-to-r from-green-500 to-emerald-500">apart</span>
             </h2>
             <p className="text-muted-foreground text-lg">
-              What sets us apart from the competition
+              Not just what we do but how we think, create, and deliver.
             </p>
           </motion.div>
 
@@ -489,7 +436,7 @@ const Services = () => {
               OUR <span className="text-yellow-300">PROCESS</span>
             </h2>
             <p className="text-white/80 text-lg">
-              A streamlined approach that delivers exceptional results every time.
+              A clear, collaborative approach designed to turn ideas into high-impact visual stories.
             </p>
           </motion.div>
 
@@ -535,7 +482,7 @@ const Services = () => {
       </section>
 
       {/* Pricing Section */}
-      <section className="py-24 bg-white relative overflow-hidden">
+      {/* <section className="py-24 bg-white relative overflow-hidden">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -605,10 +552,10 @@ const Services = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Testimonials Section */}
-      <section className="py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
+      {/* <section className="py-24 bg-gradient-to-b from-gray-50 to-white relative overflow-hidden">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -654,10 +601,10 @@ const Services = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* Schedule Meeting Section */}
-      <section className="py-24 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-r from-[#2f4372] via-[#229ad8] to-[#de4445] relative overflow-hidden">
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
@@ -684,16 +631,16 @@ const Services = () => {
               <Calendar className="text-white" size={48} />
             </motion.div>
             <h2 className="font-display text-4xl md:text-6xl text-white mb-6">
-              LET'S <span className="text-yellow-300">TALK</span>
+              Let’s Build Something That<span className="text-yellow-300"> Stands Out</span>
             </h2>
             <p className="text-white/90 text-xl mb-10 max-w-2xl mx-auto">
-              Schedule a free 30-minute consultation to discuss your project and see how we can help bring your vision to life.
+              Share your vision with us—we’ll map out the right creative and production approach to bring it to life.
             </p>
             <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
               <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 font-bold px-10 py-6 text-lg shadow-2xl">
                 <a href="https://calendly.com/indira-strikefilms/30min" target="_blank" rel="noopener noreferrer">
                   <Calendar className="mr-2" size={24} />
-                  Schedule a Meeting
+                  Book a Free Consultation
                 </a>
               </Button>
             </motion.div>
