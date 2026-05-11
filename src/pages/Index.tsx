@@ -92,6 +92,60 @@ const featuredWork = [
     color: "from-blue-500 to-purple-600",
     link: "https://youtu.be/u8AM508UURg?si=7UpsihHsWZpDq7a0"
   },
+  {
+    title: "KRISPY RISHTEY | NAKASH AZIZ | JAGAT SINGH | DILJOTT | WEDDING SONG| HUNGAMA HINDI",
+    category: "Songs",
+    image: "https://img.youtube.com/vi/blTESV3VcGQ/maxresdefault.jpg",
+    color: "from-blue-500 to-purple-600",
+    link: "https://youtu.be/blTESV3VcGQ?si=ettM8z8GlA6urc03 "
+  },
+  {
+    title: "RABBA | RICHA SHARMA | ALTAMASH FARIDI | SABRI BROTHERS | SUFI SONG | KRISPY RISHTEY | HUNGAMA HINDI",
+    category: "Songs",
+    image: "https://img.youtube.com/vi/EEpbeD6KTS8/maxresdefault.jpg",
+    color: "from-blue-500 to-purple-600",
+    link: "https://youtu.be/EEpbeD6KTS8?si=56FWVUJclj7qQEgs"
+  },
+
+  {
+    title: "PAL PAL | RAJASTHANI FOLK | NEHA KARODE | SHIVANG UPADHYAY | KRISPY RISHTEY",
+    category: "Songs",
+    image: "https://img.youtube.com/vi/6zO9NQh-cZw/maxresdefault.jpg",
+    color: "from-blue-500 to-purple-600",
+    link: "https://youtu.be/6zO9NQh-cZw?si=fOcKI1FWE5lY9tUs "
+  },
+  
+  {
+    title: "AB TUJHSE | SHREYA GHOSHAL | ROMANTIC SONG | KRISPY RISHTEY |JAGAT, APERNIT, DILJOTT | HUNGAMA HINDI",
+    category: "Songs",
+    image: "https://img.youtube.com/vi/sSfONcQatxE/maxresdefault.jpg",
+    color: "from-blue-500 to-purple-600",
+    link: "https://youtu.be/sSfONcQatxE?si=PwXoClTyjhare-7P  "
+  },
+  
+  {
+    title: "KHWAAB JEETE | KK | ROMANTIC SONG | KRISPY RISHTEY | JAGAT SINGH, DILJOTT | HUNGAMA HINDI",
+    category: "Songs",
+    image: "https://img.youtube.com/vi/NErItC3kqgE/maxresdefault.jpg",
+    color: "from-blue-500 to-purple-600",
+    link: "https://youtu.be/NErItC3kqgE?si=PkfFgWam2q8HhVwZ   "
+  },
+
+  {
+    title: "Ishq- E -Raza | Krispy Rishtey | Mohit Chauhan | Jagat Singh | Ronit Kapill |Diljott | Hungama Hindi",
+    category: "Songs",
+    image: "https://img.youtube.com/vi/o0Udx2hHZJc/maxresdefault.jpg",
+    color: "from-blue-500 to-purple-600",
+    link: "https://youtu.be/o0Udx2hHZJc?si=skzHh4OBbO_71DL8   "
+  },
+  
+  {
+    title: "MERE JEENE KA | VIKRANT BHARTIYA | ROMANTIC SONG | KRISPY RISHTEY | DILJOTT | HUNGAMA HINDI",
+    category: "Songs",
+    image: "https://img.youtube.com/vi/PCSRnGA3oII/maxresdefault.jpg",
+    color: "from-blue-500 to-purple-600",
+    link: "https://youtu.be/PCSRnGA3oII?si=kFheq6ya60WF92FE   "
+  },
   
 ];
 

@@ -5,6 +5,15 @@ import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import ClientLogos from "@/components/ClientLogos";
 import usePageTitle from "@/hooks/usePageTitle";
+import Sagar from "@/assets/team/sagar shrivastwa.jpeg";
+import Jagat from "@/assets/team/jagat singh.png";
+import Ashish from "@/assets/team/ashish asthana.png";
+import Shailendra from "@/assets/team/shailendra tiwari.png";
+import Rao from "@/assets/team/rao devendra singh.png";
+import vinit from "@/assets/team/vinit vaibhav roy.png";
+import prasanna from "@/assets/team/prasanna tiwari.png"
+import nidhi from "@/assets/team/nidhi jain.png"
+import swikriti from "@/assets/team/sweekriti bharti.png"
 
 const values = [
   { icon: Lightbulb, title: "Innovation", description: `We don’t follow trends, we create them.
@@ -23,17 +32,17 @@ From concept to final cut, we obsess over every detail to deliver work that meet
 ];
 
 const team = [
-  { name: "Sagar Srivastwa", role: "Founder", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop", color: "from-blue-400 to-cyan-500", bio: "15+ years in film production" },
-  { name: "Jagat Singh", role: "Writer", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop", color: "from-blue-400 to-cyan-500", bio: "15+ years in film production" },
-  { name: "Ashish Asthana", role: "Writer & Creative Producer", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop", color: "from-blue-400 to-cyan-500", bio: "15+ years in film production" },
-  { name: "Shailendra Tiwari", role: "Creative Director", image: "https://images.unsplash.com/photo-1472099645785-5658abf4ff4e?w=400&h=400&fit=crop", color: "from-blue-400 to-cyan-500", bio: "15+ years in film production" },
-  { name: "Rao Devender Singh", role: "Director", image: "https://images.unsplash.com/photo-1494790108377-be9c29b29330?w=400&h=400&fit=crop", color: "from-purple-400 to-pink-500", bio: "Award-winning producer" },
-  { name: "Vinit Vaibhav Rao", role: "Creative & Graphics", image: "https://images.unsplash.com/photo-1507003211169-0a1dd7228f2d?w=400&h=400&fit=crop", color: "from-orange-400 to-red-500", bio: "Visual storytelling expert" },
-  { name: "Prasanna Tiwari", role: "Executive Producer", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop", color: "from-green-400 to-teal-500", bio: "VFX & editing specialist" },
-  { name: "Umang Beena Saxena", role: "Copywriter", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop", color: "from-green-400 to-teal-500", bio: "VFX & editing specialist" },
-  { name: "Abhishek Asthana", role: "Copywriter", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop", color: "from-green-400 to-teal-500", bio: "VFX & editing specialist" },
-  { name: "Sweekriti Bharti", role: "Executive Producer", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop", color: "from-green-400 to-teal-500", bio: "VFX & editing specialist" },
-  { name: "Nidhi Jain", role: "Executive Producer", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop", color: "from-green-400 to-teal-500", bio: "VFX & editing specialist" },
+  { name: "Sagar Srivastwa", role: "Founder", image: Sagar, color: "from-blue-400 to-cyan-500",  },
+  { name: "Jagat Singh", role: "Writer", image: Jagat, color: "from-blue-400 to-cyan-500",  },
+  { name: "Ashish Asthana", role: "Writer & Creative Producer", image: Ashish, color: "from-blue-400 to-cyan-500",  },
+  { name: "Shailendra Tiwari", role: "Creative Director", image: Shailendra, color: "from-blue-400 to-cyan-500",  },
+  { name: "Rao Devender Singh", role: "Director", image: Rao, color: "from-purple-400 to-pink-500",  },
+  { name: "Vinit Vaibhav Rao", role: "Creative & Graphics", image: vinit, color: "from-orange-400 to-red-500",  },
+  { name: "Prasanna Tiwari", role: "Executive Producer", image: prasanna, color: "from-green-400 to-teal-500",  },
+  { name: "Umang Beena Saxena", role: "Copywriter", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop", color: "from-green-400 to-teal-500",  },
+  { name: "Abhishek Asthana", role: "Copywriter", image: "https://images.unsplash.com/photo-1438761681033-6461ffad8d80?w=400&h=400&fit=crop", color: "from-green-400 to-teal-500",  },
+  { name: "Sweekriti Bharti", role: "Executive Producer", image: swikriti, color: "from-green-400 to-teal-500",  },
+  { name: "Nidhi Jain", role: "Executive Producer", image: nidhi, color: "from-green-400 to-teal-500",  },
 ];
 
 const stats = [
@@ -538,7 +547,7 @@ const About = () => {
                     <img
                       src={member.image}
                       alt={member.name}
-                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-500"
+                      className="w-[400px] h-[400px] object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                   </motion.div>
                   <div className={`absolute -bottom-3 -right-3 w-12 h-12 rounded-xl bg-gradient-to-br ${member.color} flex items-center justify-center shadow-lg`}>
@@ -548,7 +557,7 @@ const About = () => {
                 <div className="p-6">
                   <h3 className="font-display text-xl text-foreground">{member.name}</h3>
                   <p className="text-primary text-sm font-bold mb-1">{member.role}</p>
-                  <p className="text-muted-foreground text-sm">{member.bio}</p>
+                  {/* <p className="text-muted-foreground text-sm">{member.bio}</p> */}
                 </div>
               </motion.div>
             ))}

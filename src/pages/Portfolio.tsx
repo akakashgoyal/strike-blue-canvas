@@ -1,18 +1,145 @@
-import { useState } from "react";
+﻿import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Play, ArrowRight, Film, Tv, Sparkles, X, Award, Eye, Calendar, Clock, Star, Users } from "lucide-react";
+import { Play, ArrowRight, Film, Sparkles, Award, Eye, Calendar, Star, Users } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import usePageTitle from "@/hooks/usePageTitle";
 
-type Category = "all" | "films" | "tv";
+type Category = "All" | "BOBCard" | "Bank Of Baroda" | "BOB X Chhat Puja" | "Laxmipati Sarees X Chhat Puja" | "Songs";
 
 const portfolioItems = [
-  { id: 1, title: "Bank of Baroda | Pradhan Mantri Vidyalaxmi Yojana – Your Launchpad to Higher Education", category: "tv" as const, thumbnail: "https://img.youtube.com/vi/VWQxzq3w2kA/sddefault.jpg", client: "Bank of Baroda", color: "from-amber-500 to-orange-600", year: "2025", video_url: "https://www.youtube.com/embed/VWQxzq3w2kA?si=FPL5BboZSmzzHTyE" },
-  { id: 2, title: "Life me tension nahi lena, Jab RuPay BOBCARD on UPI | #AurKyaChahiye | Up to ₹5 Lakhs Credit", category: "tv" as const, thumbnail: "https://img.youtube.com/vi/u8AM508UURg/sddefault.jpg", client: "BOB Card", color: "from-pink-500 to-rose-600", year: "2024", video_url: "https://www.youtube.com/embed/u8AM508UURg?si=eiq7eJ611QysfENZ" },
-  { id: 3, title: "Krispy Rishtey", category: "films" as const, thumbnail: "krispy rishtey.png", client: "Krispy Rishtey", color: "from-blue-500 to-purple-600", year: "2024", video_url: "https://www.youtube.com/embed/vuXE0ZXP3rk?si=K-NRgo74f_hvWiI8" },
-  ];
+  {
+    id: 1,
+    title: "Bank Of Baroda | Ek Khas Dost",
+    type: "Bank Of Baroda",
+    client: "Bank Of Baroda",
+    thumbnail: "https://img.youtube.com/vi/dumi861BdrY/maxresdefault.jpg",
+    color: "from-amber-500 to-orange-600",
+    video_url: "https://youtu.be/dumi861BdrY?si=fNcbV1CRKUd3FfxB",
+    // year: 2024
+  },
+  {
+    id: 2,
+    title: "Bank Of Baroda | Pradhan Mantri Vidyalaxmi Yojana",
+    type: "Bank Of Baroda",
+    client: "Bank Of Baroda",
+    thumbnail: "https://img.youtube.com/vi/VWQxzq3w2kA/maxresdefault.jpg",
+    color: "from-amber-500 to-orange-600",
+    video_url: "https://youtu.be/VWQxzq3w2kA?feature=shared",
+    // year: 2024
+  },
+  {
+    id: 3,
+    title: "छठ के बरत बड़ा पावन",
+    type: "BOB X Chhat Puja",
+    client: "BOB X Chhat Puja",
+    thumbnail: "https://img.youtube.com/vi/Nd5Q32acpS8/maxresdefault.jpg",
+    color: "from-yellow-400 to-orange-500",
+    video_url: "https://youtu.be/Nd5Q32acpS8",
+    // year: 2024
+  },
+  {
+    id: 4,
+    title: "बरतिन पर होई ना सहाय",
+    type: "BOB X Chhat Puja",
+    client: "BOB X Chhat Puja",
+    thumbnail: "https://img.youtube.com/vi/HytO02X1DHs/maxresdefault.jpg",
+    color: "from-yellow-400 to-orange-500",
+    video_url: "https://youtu.be/HytO02X1DHs?si=GIYa9DGEzO_wXrRy",
+    // year: 2024
+  },
+  {
+    id: 5,
+    title: "छठ बरतिन करेली गुहार",
+    type: "Laxmipati Sarees X Chhat Puja",
+    client: "Laxmipati Sarees X Chhat Puja",
+    thumbnail: "https://img.youtube.com/vi/ZAw9gQ5TTrc/maxresdefault.jpg",
+    color: "from-yellow-400 to-orange-500",
+    video_url: "https://youtu.be/ZAw9gQ5TTrc?si=fCbwLiCVgpRrEGh",
+    // year: 2024
+  },
+  {
+    id: 6,
+    title: "BOBCard",
+    type: "BOBCard",
+    client: "BOBCard",
+    thumbnail: "https://img.youtube.com/vi/u8AM508UURg/maxresdefault.jpg",
+    color: "from-blue-500 to-purple-600",
+    video_url: "https://youtu.be/u8AM508UURg?si=7UpsihHsWZpDq7a0",
+    // year: 2024
+  },
+  {
+    id: 7,
+    title: "KRISPY RISHTEY | NAKASH AZIZ | JAGAT SINGH | DILJOTT | WEDDING SONG| HUNGAMA HINDI",
+    type: "Songs",
+    client: "Songs",
+    thumbnail: "https://img.youtube.com/vi/blTESV3VcGQ/maxresdefault.jpg",
+    color: "from-blue-500 to-purple-600",
+    video_url: "https://youtu.be/blTESV3VcGQ?si=ettM8z8GlA6urc03",
+    // year: 2024
+  },
+  {
+    id: 8,
+    title: "RABBA | RICHA SHARMA | ALTAMASH FARIDI | SABRI BROTHERS | SUFI SONG | KRISPY RISHTEY | HUNGAMA HINDI",
+    type: "Songs",
+    client: "Songs",
+    thumbnail: "https://img.youtube.com/vi/EEpbeD6KTS8/maxresdefault.jpg",
+    color: "from-blue-500 to-purple-600",
+    video_url: "https://youtu.be/EEpbeD6KTS8?si=56FWVUJclj7qQEgs",
+    // year: 2024
+  },
+  {
+    id: 9,
+    title: "PAL PAL | RAJASTHANI FOLK | NEHA KARODE | SHIVANG UPADHYAY | KRISPY RISHTEY",
+    type: "Songs",
+    client: "Songs",
+    thumbnail: "https://img.youtube.com/vi/6zO9NQh-cZw/maxresdefault.jpg",
+    color: "from-blue-500 to-purple-600",
+    video_url: "https://youtu.be/6zO9NQh-cZw?si=fOcKI1FWE5lY9tUs",
+    // year: 2024
+  },
+  {
+    id: 10,
+    title: "AB TUJHSE | SHREYA GHOSHAL | ROMANTIC SONG | KRISPY RISHTEY |JAGAT, APERNIT, DILJOTT | HUNGAMA HINDI",
+    type: "Songs",
+    client: "Songs",
+    thumbnail: "https://img.youtube.com/vi/sSfONcQatxE/maxresdefault.jpg",
+    color: "from-blue-500 to-purple-600",
+    video_url: "https://youtu.be/sSfONcQatxE?si=PwXoClTyjhare-7P",
+    // year: 2024
+  },
+  {
+    id: 11,
+    title: "KHWAAB JEETE | KK | ROMANTIC SONG | KRISPY RISHTEY | JAGAT SINGH, DILJOTT | HUNGAMA HINDI",
+    type: "Songs",
+    client: "Songs",
+    thumbnail: "https://img.youtube.com/vi/NErItC3kqgE/maxresdefault.jpg",
+    color: "from-blue-500 to-purple-600",
+    video_url: "https://youtu.be/NErItC3kqgE?si=PkfFgWam2q8HhVwZ",
+    // year: 2024
+  },
+  {
+    id: 12,
+    title: "Ishq- E -Raza | Krispy Rishtey | Mohit Chauhan | Jagat Singh | Ronit Kapill |Diljott | Hungama Hindi",
+    type: "Songs",
+    client: "Songs",
+    thumbnail: "https://img.youtube.com/vi/o0Udx2hHZJc/maxresdefault.jpg",
+    color: "from-blue-500 to-purple-600",
+    video_url: "https://youtu.be/o0Udx2hHZJc?si=skzHh4OBbO_71DL8",
+    // year: 2024
+  },
+  {
+    id: 13,
+    title: "MERE JEENE KA | VIKRANT BHARTIYA | ROMANTIC SONG | KRISPY RISHTEY | DILJOTT | HUNGAMA HINDI",
+    type: "Songs",
+    client: "Songs",
+    thumbnail: "https://img.youtube.com/vi/PCSRnGA3oII/maxresdefault.jpg",
+    color: "from-blue-500 to-purple-600",
+    video_url: "https://youtu.be/PCSRnGA3oII?si=kFheq6ya60WF92FE",
+    // year: 2024
+  },
+];
 
 const stats = [
   { icon: Film, value: "500+", label: "Projects" },
@@ -23,9 +150,26 @@ const stats = [
 
 const Portfolio = () => {
   usePageTitle("Portfolio");
-  const [activeCategory, setActiveCategory] = useState<Category>("all");
-  const [selectedVideo, setSelectedVideo] = useState<string | null>(null);
-  const filteredItems = portfolioItems.filter((item) => activeCategory === "all" || item.category === activeCategory);
+  const [activeCategory, setActiveCategory] = useState<Category>("All");
+  const categories = ["All", ...Array.from(new Set(portfolioItems.map((item) => item.type)))] as Category[];
+
+  const getCategoryColor = (category: Category) => {
+    if (category === "All") {
+      return "from-primary to-purple-500";
+    }
+
+    return portfolioItems.find((item) => item.type === category)?.color || "from-blue-400 to-cyan-500";
+  };
+
+  const getCategoryIcon = (category: Category) => {
+    if (category === "All") {
+      return Sparkles;
+    }
+
+    return category === "Songs" ? Play : Film;
+  };
+
+  const filteredItems = portfolioItems.filter((item) => activeCategory === "All" || item.type === activeCategory);
 
   return (
     <Layout>
@@ -51,33 +195,8 @@ const Portfolio = () => {
         />
         
         {/* Floating Icons */}
-        <motion.div 
-          animate={{ y: [0, -20, 0], rotate: [0, 10, 0] }}
-          transition={{ duration: 4, repeat: Infinity }}
-          className="absolute top-32 right-32 hidden lg:block"
-        >
-          <div className="w-16 h-16 rounded-2xl bg-gradient-to-br from-purple-400 to-pink-500 shadow-xl flex items-center justify-center">
-            <Play className="text-white ml-1" size={28} />
-          </div>
-        </motion.div>
-        <motion.div 
-          animate={{ y: [0, 20, 0], rotate: [0, -10, 0] }}
-          transition={{ duration: 5, repeat: Infinity }}
-          className="absolute bottom-40 left-40 hidden lg:block"
-        >
-          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-blue-400 to-cyan-500 shadow-xl flex items-center justify-center">
-            <Film className="text-white" size={24} />
-          </div>
-        </motion.div>
-        <motion.div 
-          animate={{ y: [0, -15, 0], x: [0, 10, 0] }}
-          transition={{ duration: 6, repeat: Infinity }}
-          className="absolute top-1/2 left-24 hidden xl:block"
-        >
-          <div className="w-12 h-12 rounded-xl bg-gradient-to-br from-orange-400 to-red-500 shadow-lg flex items-center justify-center">
-            <Award className="text-white" size={20} />
-          </div>
-        </motion.div>
+      
+        
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
@@ -187,21 +306,23 @@ const Portfolio = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="flex items-center justify-between flex-wrap gap-4">
             <div className="flex items-center gap-4">
-              {[
-                { key: "all" as Category, label: "All Projects", icon: Sparkles, color: "from-primary to-purple-500" },
-                { key: "films" as Category, label: "Films", icon: Film, color: "from-orange-400 to-red-500" },
-                { key: "tv" as Category, label: "TV Ads", icon: Tv, color: "from-blue-400 to-cyan-500" },
-              ].map((tab) => (
+              {categories.map((category) => {
+                const Icon = getCategoryIcon(category);
+                const label = category === "All" ? "All Projects" : category;
+                const color = getCategoryColor(category);
+
+                return (
                 <motion.button 
-                  key={tab.key} 
+                  key={category}
                   whileHover={{ scale: 1.05 }} 
                   whileTap={{ scale: 0.95 }} 
-                  onClick={() => setActiveCategory(tab.key)}
-                  className={`flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm transition-all ${activeCategory === tab.key ? `bg-gradient-to-r ${tab.color} text-white shadow-lg` : "bg-gray-100 text-muted-foreground hover:bg-gray-200"}`}
+                  onClick={() => setActiveCategory(category)}
+                  className={`flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm transition-all ${activeCategory === category ? `bg-gradient-to-r ${color} text-white shadow-lg` : "bg-gray-100 text-muted-foreground hover:bg-gray-200"}`}
                 >
-                  <tab.icon size={18} /> {tab.label}
+                  <Icon size={18} /> {label}
                 </motion.button>
-              ))}
+                );
+              })}
             </div>
             <span className="text-muted-foreground text-sm">
               Showing {filteredItems.length} projects
@@ -222,10 +343,14 @@ const Portfolio = () => {
                 transition={{ delay: index * 0.1 }} 
                 viewport={{ once: true }} 
                 whileHover={{ y: -10 }}
-                className="group relative cursor-pointer" 
-                onClick={() => setSelectedVideo(item.video_url || null)}
+                className="group relative"
               >
-                <div className="bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100">
+                <a
+                  href={item.video_url}
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="block bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100"
+                >
                   <div className="aspect-[4/3] relative overflow-hidden">
                     <img src={item.thumbnail} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
                     <div className={`absolute inset-0 bg-gradient-to-t ${item.color} opacity-0 group-hover:opacity-40 transition-opacity duration-300`} />
@@ -233,7 +358,7 @@ const Portfolio = () => {
                     
                     {/* Play Button */}
                     <div className="absolute inset-0 flex items-center justify-center">
-                      <motion.div 
+                      <motion.div
                         initial={{ scale: 0.8, opacity: 0 }}
                         whileHover={{ scale: 1.1 }}
                         className="w-16 h-16 bg-white/95 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all shadow-2xl backdrop-blur-sm"
@@ -245,16 +370,11 @@ const Portfolio = () => {
                     {/* Tags */}
                     <div className="absolute top-4 left-4 flex gap-2">
                       <span className={`px-3 py-1.5 bg-gradient-to-r ${item.color} text-white text-xs font-bold rounded-full shadow-lg`}>
-                        {item.category === "films" ? "Film" : "TV Ad"}
+                        {item.type}
                       </span>
                     </div>
                     
-                    {/* Year Badge */}
-                    <div className="absolute top-4 right-4">
-                      <span className="px-3 py-1.5 bg-black/40 backdrop-blur-sm text-white text-xs font-bold rounded-full">
-                        {item.year}
-                      </span>
-                    </div>
+                    
                   </div>
                   
                   {/* Card Content */}
@@ -267,44 +387,19 @@ const Portfolio = () => {
                     
                     {/* Hover Arrow */}
                     <div className="flex items-center gap-2 mt-4 text-primary opacity-0 group-hover:opacity-100 transition-all">
-                      <span className="text-sm font-bold">Watch Now</span>
+                      <span className="text-sm font-bold">Watch on YouTube</span>
                       <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
                     </div>
                   </div>
-                </div>
+                </a>
               </motion.div>
             ))}
           </div>
         </div>
       </section>
 
-      {/* Video Modal */}
-      {selectedVideo && (
-        <motion.div 
-          initial={{ opacity: 0 }} 
-          animate={{ opacity: 1 }} 
-          className="fixed inset-0 z-50 bg-black/90 backdrop-blur-lg flex items-center justify-center p-4" 
-          onClick={() => setSelectedVideo(null)}
-        >
-          <motion.div 
-            initial={{ scale: 0.9, y: 20 }} 
-            animate={{ scale: 1, y: 0 }} 
-            className="w-full max-w-5xl aspect-video rounded-3xl overflow-hidden shadow-2xl" 
-            onClick={(e) => e.stopPropagation()}
-          >
-            <iframe src={selectedVideo} className="w-full h-full" allowFullScreen />
-          </motion.div>
-          <button 
-            onClick={() => setSelectedVideo(null)} 
-            className="absolute top-8 right-8 w-12 h-12 bg-white/20 backdrop-blur-sm rounded-full flex items-center justify-center text-white hover:bg-white/30 transition-colors"
-          >
-            <X size={24} />
-          </button>
-        </motion.div>
-      )}
-
       {/* Awards Section */}
-      <section className="py-20 bg-white">
+      {/* <section className="py-20 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -335,7 +430,7 @@ const Portfolio = () => {
             ))}
           </div>
         </div>
-      </section>
+      </section> */}
 
       {/* CTA */}
       <section className="py-24 bg-gradient-to-r from-primary via-blue-500 to-purple-500 relative overflow-hidden">
@@ -365,13 +460,13 @@ const Portfolio = () => {
               <Star className="text-white" size={48} />
             </motion.div>
             <h2 className="font-display text-4xl md:text-5xl text-white mb-6">
-              LIKE WHAT <span className="text-yellow-300">YOU SEE</span>?
+              Start Your  <span className="text-yellow-300">Next Project</span>?
             </h2>
-            <p className="text-white/90 text-lg mb-8">Let's create something remarkable for your brand.</p>
+            <p className="text-white/90 text-lg mb-8">Tell us what you need—we’ll take it from there.</p>
             <div className="flex flex-wrap justify-center gap-4">
               <motion.div whileHover={{ scale: 1.05 }}>
                 <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 font-bold px-10 shadow-2xl">
-                  <Link to="/contact">Start Your Project <ArrowRight className="ml-2" size={18} /></Link>
+                  <Link to="/contact">Start a Project <ArrowRight className="ml-2" size={18} /></Link>
                 </Button>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }}>

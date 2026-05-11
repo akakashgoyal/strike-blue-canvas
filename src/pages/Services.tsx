@@ -670,10 +670,10 @@ const Services = () => {
               <Rocket className="text-white" size={48} />
             </motion.div>
             <h2 className="font-display text-4xl md:text-6xl text-foreground mb-6">
-              READY TO <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-500">CREATE</span>?
+              Let’s Build Something That <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-500">Stands Out</span>
             </h2>
             <p className="text-muted-foreground text-xl mb-10">
-              Let's discuss your project and find the perfect solution for your needs.
+              Your vision, our expertise crafted into visuals that truly make an impact.
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
@@ -687,7 +687,7 @@ const Services = () => {
               <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
                 <Button asChild size="lg" variant="outline" className="border-2 font-bold px-10 py-6 text-lg">
                   <Link to="/portfolio">
-                    View Our Work
+                    See Our Work
                   </Link>
                 </Button>
               </motion.div>

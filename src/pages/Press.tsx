@@ -4,14 +4,18 @@ import { ArrowRight, ExternalLink, Newspaper, Download, Calendar, Award, Star, S
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import usePageTitle from "@/hooks/usePageTitle";
+import Img1 from "@/assets/1.avif";
+import Img2 from "@/assets/2.jpeg";
+import Img3 from "@/assets/jagat1.jpg";
 
 const pressItems = [
-  { id: 1, title: "Strike Productions Wins Best Commercial at Cannes Lions 2024", publication: "Ad Age", date: "December 2024", image: "https://images.unsplash.com/photo-1504711434969-e33886168f5c?w=800&h=600&fit=crop", link: "#" },
-  { id: 2, title: "How Strike is Revolutionizing Brand Storytelling in India", publication: "Campaign India", date: "November 2024", image: "https://images.unsplash.com/photo-1557804506-669a67965ba0?w=800&h=600&fit=crop", link: "#" },
-  { id: 3, title: "The Future of AI in Video Production: An Interview with Strike's CEO", publication: "Forbes India", date: "October 2024", image: "https://images.unsplash.com/photo-1485827404703-89b55fcc595e?w=800&h=600&fit=crop", link: "#" },
-  { id: 4, title: "Strike Productions Partners with Major Streaming Platform", publication: "Variety", date: "September 2024", image: "https://images.unsplash.com/photo-1616469829581-73993eb86b02?w=800&h=600&fit=crop", link: "#" },
-  { id: 5, title: "Behind the Scenes: Strike's Award-Winning Luxury Campaign", publication: "The Economic Times", date: "August 2024", image: "https://images.unsplash.com/photo-1492144534655-ae79c964c9d7?w=800&h=600&fit=crop", link: "#" },
-  { id: 6, title: "Strike Named Top Production House in Asia Pacific", publication: "Marketing Week", date: "July 2024", image: "https://images.unsplash.com/photo-1560472355-536de3962603?w=800&h=600&fit=crop", link: "#" },
+  { id: 1, title: `“Krispy Rishtey”: A 15-Song Musical Journey Directed by Jagat Singh and Produced by Sagar Shrivastwa, Now on Jio Cinema`, publication: "The Print", date: "19 October 2024", image: Img1, link: "https://theprint.in/ani-press-releases/krispy-rishtey-a-15-song-musical-journey-directed-by-jagat-singh-and-produced-by-sagar-shrivastwa-now-on-jio-cinema/2319286/?utm_source=chatgpt.com " },
+  { id: 2, title: "Krispy Rishtey", publication: "Filmy Beat", date: "November 2024", image: Img2, link: "https://www.filmibeat.com/bollywood/movies/krispy-rishtey.html?utm_source=chatgpt.com" },
+  { id: 3, title: "Sagar Shrivastwa's Krispy Rishtey featuring 15 songs by Jagat Singh now streaming for viewers", publication: "The Times of India", date: "23 October 2024", image: Img1, link: "https://timesofindia.indiatimes.com/entertainment/sagar-shrivastwas-krispy-rishtey-featuring-15-songs-by-jagat-singh-now-streaming-for-viewers/articleshow/114505576.cms " },
+  { id: 4, title: `
+EXCLUSIVE: Jagat Singh Solanki speaks about Sagar Shrivastava being the ‘driving force’ for his debut film Krispy Rishtey; reminisces about the song sung by KK`, publication: "Bollywood Hungama", date: "July 9 2022", image: Img3, link: "https://www.bollywoodhungama.com/news/features/exclusive-jagat-singh-solanki-speaks-sagar-shrivastava-driving-force-debut-film-krispy-rishtey-reminisces-song-sung-kk/ " },
+  { id: 5, title: "15 गाने और एक कहानी, रिलीज हुई म्यूजिकल ड्रामा 'क्रिस्पी रिश्ते', इस OTT पर देखें", publication: "NDTV Movie", date: "19 October 2024", image: Img1, link: "https://ndtv.in/bollywood/15-songs-one-story-krispy-rishtey-jagat-singh-sagar-srivastava-film-now-on-jio-cinema-6827843 " },
+  { id: 6, title: `Exclusive Premiere of 'Krispy Rishtey' | Jagat Singh & Sagar Shrivastava at the Press Meet`, publication: "MTI News", date: "18 October 2024", image: "https://img.youtube.com/vi/ASWqIUvT5Xs/maxresdefault.jpg", link: "https://www.youtube.com/watch?v=ASWqIUvT5Xs " },
 ];
 
 const awards = [
@@ -52,15 +56,7 @@ const Press = () => {
             <Newspaper className="text-white" size={28} />
           </div>
         </motion.div>
-        <motion.div 
-          animate={{ y: [0, 20, 0], rotate: [0, -10, 0] }}
-          transition={{ duration: 5, repeat: Infinity }}
-          className="absolute bottom-40 left-40 hidden lg:block"
-        >
-          <div className="w-14 h-14 rounded-2xl bg-gradient-to-br from-yellow-400 to-orange-500 shadow-xl flex items-center justify-center">
-            <Award className="text-white" size={24} />
-          </div>
-        </motion.div>
+        
         
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <motion.div
