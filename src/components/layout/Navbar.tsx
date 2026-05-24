@@ -3,6 +3,7 @@ import { Link, useLocation } from "react-router-dom";
 import { Menu, X } from "lucide-react";
 import { motion, AnimatePresence } from "framer-motion";
 import { Button } from "@/components/ui/button";
+import QuoteModal from "@/components/common/QuoteModal";
 import strikeLogo from "@/assets/strike-films-logo.png";
 
 const navLinks = [
@@ -11,7 +12,7 @@ const navLinks = [
   { name: "Services", path: "/services" },
   { name: "Portfolio", path: "/portfolio" },
   { name: "Press", path: "/press" },
-  { name: "Blog", path: "/blog" },
+  // { name: "Blog", path: "/blog" },
   { name: "Contact", path: "/contact" },
 ];
 
@@ -25,13 +26,10 @@ const Navbar = () => {
         <div className="flex items-center justify-between h-20">
           {/* Logo */}
           <Link to="/" className="flex items-center">
-            <motion.div
-              whileHover={{ scale: 1.05 }}
-              className="relative"
-            >
-              <img 
-                src={strikeLogo} 
-                alt="Strike Films" 
+            <motion.div whileHover={{ scale: 1.05 }} className="relative">
+              <img
+                src={strikeLogo}
+                alt="Strike Films"
                 className="h-28 w-auto "
               />
             </motion.div>
@@ -62,9 +60,13 @@ const Navbar = () => {
 
           {/* CTA Button */}
           <div className="hidden lg:block">
-            <Button asChild className="bg-gradient-primary hover:opacity-90 text-white font-semibold px-6 shadow-lg glow-effect">
-              <Link to="/contact">Get a Quote</Link>
-            </Button>
+            <QuoteModal
+              trigger={
+                <Button className="bg-gradient-primary hover:opacity-90 text-white text-[1.095rem] font-semibold px-6 shadow-lg glow-effect">
+                  Get a Quote
+                </Button>
+              }
+            />
           </div>
 
           {/* Mobile Menu Button */}
@@ -107,11 +109,16 @@ const Navbar = () => {
                   </Link>
                 </motion.div>
               ))}
-              <Button asChild className="mt-4 bg-gradient-primary hover:opacity-90 text-white shadow-lg">
-                <Link to="/contact" onClick={() => setIsOpen(false)}>
-                  Get a Quote
-                </Link>
-              </Button>
+              <QuoteModal
+                trigger={
+                  <Button
+                    className="mt-4 bg-gradient-primary hover:opacity-90 text-white shadow-lg"
+                    onClick={() => setIsOpen(false)}
+                  >
+                    Get a Quote
+                  </Button>
+                }
+              />
             </div>
           </motion.div>
         )}

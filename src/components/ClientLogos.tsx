@@ -5,50 +5,50 @@ import obaLogo from "@/assets/clients/OBA.png";
 import ltLogo from "@/assets/clients/LT.png";
 import nxteLogo from "@/assets/clients/NXTE.png";
 import jswLogo from "@/assets/clients/JSW.png";
-import Bob from "@/assets/clients/BOB.png"
+import Bob from "@/assets/clients/BOB.png";
 import IIBF from "@/assets/clients/IIBF.png";
 
 const clients = [
   {
     name: "Bank Of Baroda",
     logo: Bob,
-    color: "from-orange-400 to-red-500"
+    color: "from-orange-400 to-red-500",
   },
   {
     name: "IIBF",
     logo: IIBF,
-    color: "from-green-400 to-emerald-500"
+    color: "from-green-400 to-emerald-500",
   },
-  { 
-    name: "BOBCARD", 
+  {
+    name: "BOBCARD",
     logo: bobcardLogo,
-    color: "from-orange-400 to-red-500"
+    color: "from-orange-400 to-red-500",
   },
-  { 
-    name: "Laxmipati Sarees", 
+  {
+    name: "Laxmipati Sarees",
     logo: laxmipatiLogo,
-    color: "from-pink-400 to-rose-500"
+    color: "from-pink-400 to-rose-500",
   },
-  
-  { 
-    name: "L&T", 
+
+  {
+    name: "L&T",
     logo: ltLogo,
-    color: "from-blue-400 to-indigo-500"
+    color: "from-blue-400 to-indigo-500",
   },
-  { 
-    name: "JSW", 
+  {
+    name: "JSW",
     logo: jswLogo,
-    color: "from-blue-400 to-indigo-500"
+    color: "from-blue-400 to-indigo-500",
   },
-  { 
-    name: "OBA Electric Vehicle", 
+  {
+    name: "OBA Electric Vehicle",
     logo: obaLogo,
-    color: "from-cyan-400 to-blue-500"
+    color: "from-cyan-400 to-blue-500",
   },
-  { 
-    name: "NXT-E Mobility", 
+  {
+    name: "NXT-E Mobility",
     logo: nxteLogo,
-    color: "from-[#113e5d] to-[#f29200]"
+    color: "from-[#113e5d] to-[#f29200]",
   },
 ];
 
@@ -56,7 +56,7 @@ const ClientLogos = () => {
   return (
     <section className="py-20 bg-white relative overflow-hidden">
       <div className="absolute inset-0 bg-gradient-to-b from-gray-50/50 to-white" />
-      
+
       <div className="container mx-auto px-4 lg:px-8 relative z-10">
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -64,11 +64,14 @@ const ClientLogos = () => {
           viewport={{ once: true }}
           className="text-center max-w-3xl mx-auto mb-16"
         >
-          <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-bold tracking-widest uppercase mb-4">
+          <span className="inline-block px-4 py-1.5 rounded-full bg-primary/10 text-primary text-sm font-semibold tracking-widest  mb-4">
             Trusted Partners
           </span>
           <h2 className="font-display text-4xl md:text-5xl text-foreground mb-4">
-            OUR <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-500">CLIENTS</span>
+            OUR{" "}
+            <span className="text-transparent bg-clip-text bg-gradient-to-r  to-[#38b6f0]  from-[#de4445]">
+              CLIENTS
+            </span>
           </h2>
           <p className="text-muted-foreground text-lg">
             Proudly working with India's leading brands
@@ -88,21 +91,21 @@ const ClientLogos = () => {
             >
               <div className="relative p-6 bg-white rounded-2xl border border-gray-100 shadow-lg hover:shadow-2xl transition-all duration-300">
                 {/* Gradient border on hover */}
-                <div className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${client.color} opacity-0 group-hover:opacity-100 transition-opacity -z-10 blur-xl`} />
-                
+                <div
+                  className={`absolute inset-0 rounded-2xl bg-gradient-to-r ${client.color} opacity-0 group-hover:opacity-100 transition-opacity -z-10 blur-xl`}
+                />
+
                 <div className="h-48 gap-8 flex items-center justify-center">
                   <img
                     src={client.logo}
                     alt={client.name}
                     className="h-[500px] w-[500px] object-contain transition-all duration-300"
                   />
-                  
                 </div>
 
                 <p className="text-center text-xs text-muted-foreground mt-3 font-medium opacity-0 group-hover:opacity-100 transition-opacity">
                   {client.name}
                 </p>
-                
               </div>
             </motion.div>
           ))}
@@ -114,7 +117,7 @@ const ClientLogos = () => {
           transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
           className="absolute -top-20 -right-20 w-64 h-64 border-4 border-primary/5 rounded-full"
         /> */}
-          {/* <motion.div
+        {/* <motion.div
             animate={{ rotate: -360 }}
             transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
             className="absolute -bottom-20 -left-20 w-80 h-80 border-4 border-purple-500/5 rounded-full"

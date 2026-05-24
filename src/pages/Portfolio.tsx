@@ -1,12 +1,28 @@
 ﻿import { useState } from "react";
 import { motion } from "framer-motion";
 import { Link } from "react-router-dom";
-import { Play, ArrowRight, Film, Sparkles, Award, Eye, Calendar, Star, Users } from "lucide-react";
+import {
+  Play,
+  ArrowRight,
+  Film,
+  Sparkles,
+  Award,
+  Eye,
+  Calendar,
+  Star,
+  Users,
+} from "lucide-react";
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import usePageTitle from "@/hooks/usePageTitle";
 
-type Category = "All" | "BOBCard" | "Bank Of Baroda" | "BOB X Chhat Puja" | "Laxmipati Sarees X Chhat Puja" | "Songs";
+type Category =
+  | "All"
+  | "BOBCard"
+  | "Bank Of Baroda"
+  | "BOB X Chhat Puja"
+  | "Laxmipati Sarees X Chhat Puja"
+  | "Songs";
 
 const portfolioItems = [
   {
@@ -71,7 +87,8 @@ const portfolioItems = [
   },
   {
     id: 7,
-    title: "KRISPY RISHTEY | NAKASH AZIZ | JAGAT SINGH | DILJOTT | WEDDING SONG| HUNGAMA HINDI",
+    title:
+      "Krispy Rishtey | Nakash Aziz | Jagat Singh | Diljott | Wedding Song | Hungama Hindi",
     type: "Songs",
     client: "Songs",
     thumbnail: "https://img.youtube.com/vi/blTESV3VcGQ/maxresdefault.jpg",
@@ -81,7 +98,8 @@ const portfolioItems = [
   },
   {
     id: 8,
-    title: "RABBA | RICHA SHARMA | ALTAMASH FARIDI | SABRI BROTHERS | SUFI SONG | KRISPY RISHTEY | HUNGAMA HINDI",
+    title:
+      "Rabba | Richa Sharma | Altamash Faridi | Sabri Brothers | Sufi Song | Krispy Rishtey | Hungama Hindi",
     type: "Songs",
     client: "Songs",
     thumbnail: "https://img.youtube.com/vi/EEpbeD6KTS8/maxresdefault.jpg",
@@ -91,7 +109,8 @@ const portfolioItems = [
   },
   {
     id: 9,
-    title: "PAL PAL | RAJASTHANI FOLK | NEHA KARODE | SHIVANG UPADHYAY | KRISPY RISHTEY",
+    title:
+      "Pal Pal | Rajasthani Folk | Neha Karode | Shivang Upadhyay | Krispy Rishtey",
     type: "Songs",
     client: "Songs",
     thumbnail: "https://img.youtube.com/vi/6zO9NQh-cZw/maxresdefault.jpg",
@@ -101,7 +120,8 @@ const portfolioItems = [
   },
   {
     id: 10,
-    title: "AB TUJHSE | SHREYA GHOSHAL | ROMANTIC SONG | KRISPY RISHTEY |JAGAT, APERNIT, DILJOTT | HUNGAMA HINDI",
+    title:
+      "Ab Tujhse | Shreya Ghoshal | Romantic Song | Krispy Rishtey | Jagat, Apernit, Diljott | Hungama Hindi",
     type: "Songs",
     client: "Songs",
     thumbnail: "https://img.youtube.com/vi/sSfONcQatxE/maxresdefault.jpg",
@@ -111,7 +131,8 @@ const portfolioItems = [
   },
   {
     id: 11,
-    title: "KHWAAB JEETE | KK | ROMANTIC SONG | KRISPY RISHTEY | JAGAT SINGH, DILJOTT | HUNGAMA HINDI",
+    title:
+      "Khwaab Jeete | KK | Romantic Song | Krispy Rishtey | Jagat Singh, Diljott | Hungama Hindi",
     type: "Songs",
     client: "Songs",
     thumbnail: "https://img.youtube.com/vi/NErItC3kqgE/maxresdefault.jpg",
@@ -121,7 +142,8 @@ const portfolioItems = [
   },
   {
     id: 12,
-    title: "Ishq- E -Raza | Krispy Rishtey | Mohit Chauhan | Jagat Singh | Ronit Kapill |Diljott | Hungama Hindi",
+    title:
+      "Ishq-e-Raza | Krispy Rishtey | Mohit Chauhan | Jagat Singh | Ronit Kapill | Diljott | Hungama Hindi",
     type: "Songs",
     client: "Songs",
     thumbnail: "https://img.youtube.com/vi/o0Udx2hHZJc/maxresdefault.jpg",
@@ -131,7 +153,8 @@ const portfolioItems = [
   },
   {
     id: 13,
-    title: "MERE JEENE KA | VIKRANT BHARTIYA | ROMANTIC SONG | KRISPY RISHTEY | DILJOTT | HUNGAMA HINDI",
+    title:
+      "Mere Jeene Ka | Vikrant Bhartiya | Romantic Song | Krispy Rishtey | Diljott | Hungama Hindi",
     type: "Songs",
     client: "Songs",
     thumbnail: "https://img.youtube.com/vi/PCSRnGA3oII/maxresdefault.jpg",
@@ -151,14 +174,20 @@ const stats = [
 const Portfolio = () => {
   usePageTitle("Portfolio");
   const [activeCategory, setActiveCategory] = useState<Category>("All");
-  const categories = ["All", ...Array.from(new Set(portfolioItems.map((item) => item.type)))] as Category[];
+  const categories = [
+    "All",
+    ...Array.from(new Set(portfolioItems.map((item) => item.type))),
+  ] as Category[];
 
   const getCategoryColor = (category: Category) => {
     if (category === "All") {
       return "from-primary to-purple-500";
     }
 
-    return portfolioItems.find((item) => item.type === category)?.color || "from-blue-400 to-cyan-500";
+    return (
+      portfolioItems.find((item) => item.type === category)?.color ||
+      "from-blue-400 to-cyan-500"
+    );
   };
 
   const getCategoryIcon = (category: Category) => {
@@ -169,43 +198,43 @@ const Portfolio = () => {
     return category === "Songs" ? Play : Film;
   };
 
-  const filteredItems = portfolioItems.filter((item) => activeCategory === "All" || item.type === activeCategory);
+  const filteredItems = portfolioItems.filter(
+    (item) => activeCategory === "All" || item.type === activeCategory,
+  );
 
   return (
     <Layout>
       {/* Hero Section - Enhanced */}
       <section className="min-h-[70vh] py-32 relative overflow-hidden flex items-center">
         <div className="absolute inset-0 bg-gradient-to-br from-purple-50 via-pink-50 to-blue-50" />
-        
+
         {/* Animated Orbs */}
-        <motion.div 
+        <motion.div
           animate={{ scale: [1, 1.3, 1], rotate: 360, x: [0, 80, 0] }}
           transition={{ duration: 25, repeat: Infinity, ease: "linear" }}
           className="absolute top-20 right-20 w-80 h-80 bg-purple-400/20 rounded-full blur-3xl"
         />
-        <motion.div 
+        <motion.div
           animate={{ scale: [1.2, 1, 1.2], rotate: -360, y: [0, 60, 0] }}
           transition={{ duration: 30, repeat: Infinity, ease: "linear" }}
           className="absolute bottom-20 left-20 w-96 h-96 bg-pink-400/20 rounded-full blur-3xl"
         />
-        <motion.div 
+        <motion.div
           animate={{ scale: [1, 1.4, 1] }}
           transition={{ duration: 10, repeat: Infinity, ease: "easeInOut" }}
           className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[500px] h-[500px] bg-blue-300/15 rounded-full blur-3xl"
         />
-        
+
         {/* Floating Icons */}
-      
-        
-        
+
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
           <div className="grid lg:grid-cols-2 gap-16 items-center">
-            <motion.div 
+            <motion.div
               initial={{ opacity: 0, x: -50 }}
               animate={{ opacity: 1, x: 0 }}
               transition={{ duration: 0.8 }}
             >
-              <motion.span 
+              <motion.span
                 initial={{ scale: 0 }}
                 animate={{ scale: 1 }}
                 className="inline-block px-4 py-1.5 rounded-full bg-white shadow-lg border border-primary/20 text-primary text-sm font-bold tracking-widest uppercase mb-6"
@@ -213,24 +242,47 @@ const Portfolio = () => {
                 🎬 Our Portfolio
               </motion.span>
               <h1 className="font-display text-5xl md:text-7xl text-foreground mb-6">
-                FEATURED <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary via-purple-500 to-pink-500">WORK</span>
+                FEATURED{" "}
+                <span className="text-transparent bg-clip-text bg-gradient-to-r  to-[#38b6f0]  from-[#de4445]">
+                  WORK
+                </span>
               </h1>
               <p className="text-xl text-muted-foreground max-w-xl leading-relaxed mb-8">
-                Explore our collection of award-winning films and commercials that have captivated audiences worldwide.
+                Explore our collection of award-winning films and commercials
+                that have captivated audiences worldwide.
               </p>
-              
+
               <div className="flex flex-wrap gap-4">
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button asChild size="lg" className="bg-gradient-to-r from-primary to-purple-600 text-white font-bold shadow-xl">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Button
+                    asChild
+                    size="lg"
+                    className="bg-gradient-to-r  to-[#38b6f0]  from-[#de4445] text-white font-bold shadow-xl"
+                  >
                     <Link to="/contact">
                       Start Your Project
                       <ArrowRight className="ml-2" size={20} />
                     </Link>
                   </Button>
                 </motion.div>
-                <motion.div whileHover={{ scale: 1.05 }} whileTap={{ scale: 0.95 }}>
-                  <Button asChild variant="outline" size="lg" className="border-2 font-bold">
-                    <a href="https://calendly.com/indira-strikefilms/30min" target="_blank" rel="noopener noreferrer">
+                <motion.div
+                  whileHover={{ scale: 1.05 }}
+                  whileTap={{ scale: 0.95 }}
+                >
+                  <Button
+                    asChild
+                    variant="outline"
+                    size="lg"
+                    className="border-2 font-bold"
+                  >
+                    <a
+                      href="https://calendly.com/indira-strikefilms/30min"
+                      target="_blank"
+                      rel="noopener noreferrer"
+                    >
                       <Calendar className="mr-2" size={20} />
                       Book a Call
                     </a>
@@ -248,7 +300,11 @@ const Portfolio = () => {
             >
               <motion.div
                 animate={{ y: [0, -15, 0] }}
-                transition={{ duration: 5, repeat: Infinity, ease: "easeInOut" }}
+                transition={{
+                  duration: 5,
+                  repeat: Infinity,
+                  ease: "easeInOut",
+                }}
                 className="relative"
               >
                 <div className="absolute inset-0 bg-gradient-to-r from-purple-500/30 to-pink-500/30 rounded-3xl blur-2xl transform rotate-3" />
@@ -260,8 +316,12 @@ const Portfolio = () => {
                   />
                   <div className="absolute inset-0 bg-gradient-to-t from-black/60 to-transparent flex items-end p-8">
                     <div>
-                      <span className="px-3 py-1 bg-primary text-white text-xs font-bold rounded-full">Featured</span>
-                      <h3 className="font-display text-2xl text-white mt-2">Award-Winning Campaign</h3>
+                      <span className="px-3 py-1 bg-primary text-white text-xs font-bold rounded-full">
+                        Featured
+                      </span>
+                      <h3 className="font-display text-2xl text-white mt-2">
+                        Award-Winning Campaign
+                      </h3>
                     </div>
                   </div>
                   <motion.div
@@ -269,7 +329,11 @@ const Portfolio = () => {
                     className="absolute inset-0 flex items-center justify-center"
                   >
                     <div className="w-20 h-20 bg-white/90 rounded-full flex items-center justify-center shadow-2xl cursor-pointer">
-                      <Play className="text-primary ml-1" size={32} fill="currentColor" />
+                      <Play
+                        className="text-primary ml-1"
+                        size={32}
+                        fill="currentColor"
+                      />
                     </div>
                   </motion.div>
                 </div>
@@ -293,7 +357,9 @@ const Portfolio = () => {
                 className="text-center"
               >
                 <stat.icon className="w-8 h-8 mx-auto mb-2 text-white/80" />
-                <div className="font-display text-4xl text-white">{stat.value}</div>
+                <div className="font-display text-4xl text-white">
+                  {stat.value}
+                </div>
                 <div className="text-white/80 text-sm">{stat.label}</div>
               </motion.div>
             ))}
@@ -312,15 +378,15 @@ const Portfolio = () => {
                 const color = getCategoryColor(category);
 
                 return (
-                <motion.button 
-                  key={category}
-                  whileHover={{ scale: 1.05 }} 
-                  whileTap={{ scale: 0.95 }} 
-                  onClick={() => setActiveCategory(category)}
-                  className={`flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm transition-all ${activeCategory === category ? `bg-gradient-to-r ${color} text-white shadow-lg` : "bg-gray-100 text-muted-foreground hover:bg-gray-200"}`}
-                >
-                  <Icon size={18} /> {label}
-                </motion.button>
+                  <motion.button
+                    key={category}
+                    whileHover={{ scale: 1.05 }}
+                    whileTap={{ scale: 0.95 }}
+                    onClick={() => setActiveCategory(category)}
+                    className={`flex items-center gap-2 px-6 py-3 rounded-full font-bold text-sm transition-all ${activeCategory === category ? `bg-gradient-to-r ${color} text-white shadow-lg` : "bg-gray-100 text-muted-foreground hover:bg-gray-200"}`}
+                  >
+                    <Icon size={18} /> {label}
+                  </motion.button>
                 );
               })}
             </div>
@@ -336,12 +402,12 @@ const Portfolio = () => {
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-8">
             {filteredItems.map((item, index) => (
-              <motion.div 
-                key={item.id} 
-                initial={{ opacity: 0, y: 30 }} 
-                whileInView={{ opacity: 1, y: 0 }} 
-                transition={{ delay: index * 0.1 }} 
-                viewport={{ once: true }} 
+              <motion.div
+                key={item.id}
+                initial={{ opacity: 0, y: 30 }}
+                whileInView={{ opacity: 1, y: 0 }}
+                transition={{ delay: index * 0.1 }}
+                viewport={{ once: true }}
                 whileHover={{ y: -10 }}
                 className="group relative"
               >
@@ -352,10 +418,16 @@ const Portfolio = () => {
                   className="block bg-white rounded-3xl overflow-hidden shadow-lg hover:shadow-2xl transition-all duration-500 border border-gray-100"
                 >
                   <div className="aspect-[4/3] relative overflow-hidden">
-                    <img src={item.thumbnail} alt={item.title} className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700" />
-                    <div className={`absolute inset-0 bg-gradient-to-t ${item.color} opacity-0 group-hover:opacity-40 transition-opacity duration-300`} />
+                    <img
+                      src={item.thumbnail}
+                      alt={item.title}
+                      className="w-full h-full object-cover group-hover:scale-110 transition-transform duration-700"
+                    />
+                    <div
+                      className={`absolute inset-0 bg-gradient-to-t ${item.color} opacity-0 group-hover:opacity-40 transition-opacity duration-300`}
+                    />
                     <div className="absolute inset-0 bg-gradient-to-t from-black/70 via-transparent to-transparent" />
-                    
+
                     {/* Play Button */}
                     <div className="absolute inset-0 flex items-center justify-center">
                       <motion.div
@@ -363,32 +435,44 @@ const Portfolio = () => {
                         whileHover={{ scale: 1.1 }}
                         className="w-16 h-16 bg-white/95 rounded-full flex items-center justify-center opacity-0 group-hover:opacity-100 transition-all shadow-2xl backdrop-blur-sm"
                       >
-                        <Play className="text-primary ml-1" size={28} fill="currentColor" />
+                        <Play
+                          className="text-primary ml-1"
+                          size={28}
+                          fill="currentColor"
+                        />
                       </motion.div>
                     </div>
-                    
+
                     {/* Tags */}
                     <div className="absolute top-4 left-4 flex gap-2">
-                      <span className={`px-3 py-1.5 bg-gradient-to-r ${item.color} text-white text-xs font-bold rounded-full shadow-lg`}>
+                      <span
+                        className={`px-3 py-1.5 bg-gradient-to-r ${item.color} text-white text-xs font-bold rounded-full shadow-lg`}
+                      >
                         {item.type}
                       </span>
                     </div>
-                    
-                    
                   </div>
-                  
+
                   {/* Card Content */}
                   <div className="p-6">
                     <div className="flex items-center justify-between mb-2">
-                      <span className="text-xs text-muted-foreground font-medium uppercase tracking-wider">{item.client}</span>
-                      
+                      <span className="text-xs text-muted-foreground font-medium uppercase tracking-wider">
+                        {item.client}
+                      </span>
                     </div>
-                    <h3 className="font-display text-xl text-foreground group-hover:text-primary transition-colors leading-tight">{item.title}</h3>
-                    
+                    <h3 className="font-display text-xl text-foreground  group-hover:text-primary transition-colors leading-tight">
+                      {item.title}
+                    </h3>
+
                     {/* Hover Arrow */}
                     <div className="flex items-center gap-2 mt-4 text-primary opacity-0 group-hover:opacity-100 transition-all">
-                      <span className="text-sm font-bold">Watch on YouTube</span>
-                      <ArrowRight size={16} className="group-hover:translate-x-1 transition-transform" />
+                      <span className="text-sm font-bold">
+                        Watch on YouTube
+                      </span>
+                      <ArrowRight
+                        size={16}
+                        className="group-hover:translate-x-1 transition-transform"
+                      />
                     </div>
                   </div>
                 </a>
@@ -444,15 +528,15 @@ const Portfolio = () => {
           transition={{ duration: 60, repeat: Infinity, ease: "linear" }}
           className="absolute -bottom-20 -right-20 w-80 h-80 border-8 border-white/10 rounded-full"
         />
-        
+
         <div className="container mx-auto px-4 lg:px-8 text-center relative z-10">
-          <motion.div 
-            initial={{ opacity: 0, y: 20 }} 
-            whileInView={{ opacity: 1, y: 0 }} 
-            viewport={{ once: true }} 
+          <motion.div
+            initial={{ opacity: 0, y: 20 }}
+            whileInView={{ opacity: 1, y: 0 }}
+            viewport={{ once: true }}
             className="max-w-2xl mx-auto"
           >
-            <motion.div 
+            <motion.div
               animate={{ scale: [1, 1.1, 1] }}
               transition={{ duration: 2, repeat: Infinity }}
               className="w-24 h-24 mx-auto mb-8 rounded-3xl bg-white/20 backdrop-blur-lg flex items-center justify-center"
@@ -460,18 +544,34 @@ const Portfolio = () => {
               <Star className="text-white" size={48} />
             </motion.div>
             <h2 className="font-display text-4xl md:text-5xl text-white mb-6">
-              Start Your  <span className="text-yellow-300">Next Project</span>?
+              Start Your <span className="text-yellow-300">Next Project</span>?
             </h2>
-            <p className="text-white/90 text-lg mb-8">Tell us what you need—we’ll take it from there.</p>
+            <p className="text-white/90 text-lg mb-8">
+              Tell us what you need—we’ll take it from there.
+            </p>
             <div className="flex flex-wrap justify-center gap-4">
               <motion.div whileHover={{ scale: 1.05 }}>
-                <Button asChild size="lg" className="bg-white text-primary hover:bg-white/90 font-bold px-10 shadow-2xl">
-                  <Link to="/contact">Start a Project <ArrowRight className="ml-2" size={18} /></Link>
+                <Button
+                  asChild
+                  size="lg"
+                  className="bg-white text-primary hover:bg-white/90 font-bold px-10 shadow-2xl"
+                >
+                  <Link to="/contact">
+                    Start a Project <ArrowRight className="ml-2" size={18} />
+                  </Link>
                 </Button>
               </motion.div>
               <motion.div whileHover={{ scale: 1.05 }}>
-                <Button asChild size="lg"  className=" text-white hover:bg-white/10 font-bold px-10">
-                  <a href="https://calendly.com/indira-strikefilms/30min" target="_blank" rel="noopener noreferrer">
+                <Button
+                  asChild
+                  size="lg"
+                  className=" text-white hover:bg-white/10 font-bold px-10"
+                >
+                  <a
+                    href="https://calendly.com/indira-strikefilms/30min"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                  >
                     <Calendar className="mr-2" size={18} />
                     Book a Call
                   </a>
