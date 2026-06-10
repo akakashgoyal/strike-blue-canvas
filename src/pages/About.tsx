@@ -30,6 +30,7 @@ import vinit from "@/assets/team/vinit vaibhav roy.png";
 import prasanna from "@/assets/team/prasanna tiwari.png";
 import nidhi from "@/assets/team/nidhi jain.png";
 import swikriti from "@/assets/team/sweekriti bharti.png";
+import QuoteModal from "@/components/common/QuoteModal";
 
 const values = [
   {
@@ -237,36 +238,16 @@ const About = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Button
-                    asChild
-                    size="lg"
-                    className="bg-gradient-to-r  to-[#38b6f0]  from-[#de4445] text-white font-bold shadow-xl"
-                  >
-                    <Link to="/portfolio">
-                      <Play className="mr-2" size={20} />
-                      View Our Work
-                    </Link>
-                  </Button>
-                </motion.div>
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Button
-                    asChild
-                    variant="outline"
-                    size="lg"
-                    className="border-2 font-bold"
-                  >
-                    <a
-                      href="https://calendly.com/indira-strikefilms/30min"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Calendar className="mr-2" size={20} />
-                      Book a Call
-                    </a>
-                  </Button>
+                  <QuoteModal
+                    trigger={
+                      <Button
+                        size="lg"
+                        className="bg-gradient-to-r  to-[#38b6f0]  from-[#de4445] text-white font-bold shadow-xl"
+                      >
+                        Connect With Us Now!
+                      </Button>
+                    }
+                  />
                 </motion.div>
               </div>
             </motion.div>
@@ -822,26 +803,13 @@ const About = () => {
                   size="lg"
                   className="bg-white text-primary hover:bg-white/90 font-bold px-10 shadow-2xl"
                 >
-                  <Link to="/contact">
-                    Start a Project
-                    <ArrowRight className="ml-2" size={18} />
-                  </Link>
-                </Button>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }}>
-                <Button
-                  asChild
-                  size="lg"
-                  className=" text-white hover:bg-white/10 font-bold px-10"
-                >
-                  <a
-                    href="https://calendly.com/indira-strikefilms/30min "
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Calendar className="mr-2" size={18} />
-                    Book a Call
-                  </a>
+                  <QuoteModal
+                    trigger={
+                      <Button className="bg-white text-primary hover:bg-white/90 font-bold px-10 py-6 text-lg shadow-2xl">
+                        Connect With Us Now!
+                      </Button>
+                    }
+                  />
                 </Button>
               </motion.div>
             </div>

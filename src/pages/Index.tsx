@@ -530,35 +530,13 @@ const Index = () => {
                       size="lg"
                       className="bg-gradient-to-r to-[#38b6f0]  from-[#de4445] text-white font-bold px-8 h-14 shadow-2xl group"
                     >
-                      <Link to="/portfolio" className="flex items-center gap-2">
-                        <Play size={18} />
-                        View Our Work
-                        <ArrowRight
-                          size={16}
-                          className="group-hover:translate-x-1 transition-transform"
-                        />
-                      </Link>
-                    </Button>
-                  </motion.div>
-
-                  <motion.div
-                    whileHover={{ scale: 1.05 }}
-                    whileTap={{ scale: 0.95 }}
-                  >
-                    <Button
-                      asChild
-                      variant="outline"
-                      size="lg"
-                      className="border-2 border-primary/30 px-8 h-14 bg-white/80 backdrop-blur-sm font-bold"
-                    >
-                      <a
-                        href="https://calendly.com/indira-strikefilms/30min"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                      >
-                        <Calendar size={18} className="mr-2" />
-                        Book a Call
-                      </a>
+                      <QuoteModal
+                        trigger={
+                          <Button className="bg-white text-primary hover:bg-white/90 font-bold px-10 py-6 text-lg shadow-2xl">
+                            Connect With Us Now!
+                          </Button>
+                        }
+                      />
                     </Button>
                   </motion.div>
                 </motion.div>

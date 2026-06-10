@@ -14,7 +14,7 @@ const Layout = ({ children }: LayoutProps) => {
       <Navbar />
       <main className="flex-1 pt-20 pb-28 sm:pb-32">{children}</main>
       <Footer />
-      <ScheduleMeetingButton />
+      {/* <ScheduleMeetingButton /> */}
       <StickyCTA />
     </div>
   );

@@ -20,23 +20,24 @@ const contactMethods = [
   {
     icon: Mail,
     title: "Email Us",
-    content: "info@strikefilmss.com",
+    content: "info.strikefilmss@gmail.com",
+    link: "mailto:info.strikefilmss@gmail.com",
     color: "from-blue-400 to-cyan-500",
     desc: "Reach to us via email",
   },
   {
     icon: Phone,
     title: "Call Us",
-    content: "+91 7091877256",
+    content: "+91 7977376669",
+    link: "tel:+917977376669",
     color: "from-purple-400 to-pink-500",
     desc: "Mon-Fri, 10AM - 7PM IST",
   },
   {
     icon: MapPin,
     title: "Visit Us",
-    content: "123 Production Street, Mumbai",
+    content: "513, 5th Floor, Strike Films, Standford Plaza, Anderi, 400053",
     color: "from-orange-400 to-red-500",
-    desc: "Film District, Maharashtra",
   },
   {
     icon: Clock,
@@ -134,12 +135,15 @@ const Contact = () => {
                   whileTap={{ scale: 0.95 }}
                 >
                   <Button
+                    asChild
                     variant="outline"
                     size="lg"
                     className="border-2 font-bold"
                   >
-                    <Phone className="mr-2" size={20} />
-                    +91 70918 77256
+                    <a href="tel:+917977376669">
+                      <Phone className="mr-2" size={20} />
+                      +91 79773 76669
+                    </a>
                   </Button>
                 </motion.div>
               </div>
@@ -212,7 +216,9 @@ const Contact = () => {
                   {item.title}
                 </h3>
                 <p className="font-semibold text-primary mb-1">
-                  {item.content}
+                  <a href={item.link} target="_blank" rel="noopener noreferrer">
+                    {item.content}
+                  </a>
                 </p>
                 <p className="text-sm text-muted-foreground">{item.desc}</p>
               </motion.div>
@@ -421,7 +427,7 @@ const Contact = () => {
                   size="lg"
                   className="bg-white text-primary hover:bg-white/90 font-bold px-10 shadow-2xl"
                 >
-                  <a href="mailto:info@strikefilmss.com">
+                  <a href="mailto:info.strikefilmss@gmail.com">
                     <Mail className="mr-2" size={20} />
                     Email Us
                   </a>

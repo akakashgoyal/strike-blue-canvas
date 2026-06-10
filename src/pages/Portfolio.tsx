@@ -15,6 +15,7 @@ import {
 import { Button } from "@/components/ui/button";
 import Layout from "@/components/layout/Layout";
 import usePageTitle from "@/hooks/usePageTitle";
+import QuoteModal from "@/components/common/QuoteModal";
 
 type Category =
   | "All"
@@ -257,36 +258,17 @@ const Portfolio = () => {
                   whileHover={{ scale: 1.05 }}
                   whileTap={{ scale: 0.95 }}
                 >
-                  <Button
-                    asChild
-                    size="lg"
-                    className="bg-gradient-to-r  to-[#38b6f0]  from-[#de4445] text-white font-bold shadow-xl"
-                  >
-                    <Link to="/contact">
-                      Start Your Project
-                      <ArrowRight className="ml-2" size={20} />
-                    </Link>
-                  </Button>
-                </motion.div>
-                <motion.div
-                  whileHover={{ scale: 1.05 }}
-                  whileTap={{ scale: 0.95 }}
-                >
-                  <Button
-                    asChild
-                    variant="outline"
-                    size="lg"
-                    className="border-2 font-bold"
-                  >
-                    <a
-                      href="https://calendly.com/indira-strikefilms/30min"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Calendar className="mr-2" size={20} />
-                      Book a Call
-                    </a>
-                  </Button>
+                  <QuoteModal
+                    title="Start your project today"
+                    trigger={
+                      <Button
+                        size="lg"
+                        className="bg-gradient-to-r  to-[#38b6f0]  from-[#de4445] text-white font-bold shadow-xl"
+                      >
+                        Start a project
+                      </Button>
+                    }
+                  />
                 </motion.div>
               </div>
             </motion.div>
@@ -551,31 +533,18 @@ const Portfolio = () => {
             </p>
             <div className="flex flex-wrap justify-center gap-4">
               <motion.div whileHover={{ scale: 1.05 }}>
-                <Button
-                  asChild
-                  size="lg"
-                  className="bg-white text-primary hover:bg-white/90 font-bold px-10 shadow-2xl"
-                >
-                  <Link to="/contact">
-                    Start a Project <ArrowRight className="ml-2" size={18} />
-                  </Link>
-                </Button>
-              </motion.div>
-              <motion.div whileHover={{ scale: 1.05 }}>
-                <Button
-                  asChild
-                  size="lg"
-                  className=" text-white hover:bg-white/10 font-bold px-10"
-                >
-                  <a
-                    href="https://calendly.com/indira-strikefilms/30min"
-                    target="_blank"
-                    rel="noopener noreferrer"
-                  >
-                    <Calendar className="mr-2" size={18} />
-                    Book a Call
-                  </a>
-                </Button>
+                <QuoteModal
+                  title="Start your project today"
+                  trigger={
+                    <Button
+                      size="lg"
+                      className="bg-white text-primary hover:bg-white/90 font-bold px-10 shadow-2xl"
+                    >
+                      Start a project
+                      <ArrowRight className="mr-2" size={18} />
+                    </Button>
+                  }
+                />
               </motion.div>
             </div>
           </motion.div>
