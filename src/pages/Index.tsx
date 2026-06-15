@@ -34,6 +34,7 @@ import {
 } from "@/components/ui/carousel";
 import Layout from "@/components/layout/Layout";
 import ClientLogos from "@/components/ClientLogos";
+import HomeImage from "@/assets/home.png";
 import usePageTitle from "@/hooks/usePageTitle";
 import QuoteModal from "@/components/common/QuoteModal";
 
@@ -561,7 +562,7 @@ const Index = () => {
                   <div className="absolute inset-0 bg-gradient-to-r from-primary/30 to-purple-500/30 rounded-3xl blur-2xl rotate-3" />
 
                   <img
-                    src="https://images.unsplash.com/photo-1492691527719-9d1e07e534b4?w=800&q=80"
+                    src={HomeImage}
                     alt="Film Production"
                     className="relative rounded-3xl shadow-2xl border-4 border-white/50 w-full"
                   />

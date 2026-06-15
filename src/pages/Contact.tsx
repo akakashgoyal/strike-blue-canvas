@@ -20,8 +20,8 @@ const contactMethods = [
   {
     icon: Mail,
     title: "Email Us",
-    content: "info.strikefilmss@gmail.com",
-    link: "mailto:info.strikefilmss@gmail.com",
+    content: "info@strikefilmss.com",
+    link: "mailto:info@strikefilmss.com",
     color: "from-blue-400 to-cyan-500",
     desc: "Reach to us via email",
   },
@@ -427,7 +427,7 @@ const Contact = () => {
                   size="lg"
                   className="bg-white text-primary hover:bg-white/90 font-bold px-10 shadow-2xl"
                 >
-                  <a href="mailto:info.strikefilmss@gmail.com">
+                  <a href="mailto:info@strikefilmss.com">
                     <Mail className="mr-2" size={20} />
                     Email Us
                   </a>

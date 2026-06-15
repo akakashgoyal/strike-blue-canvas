@@ -154,10 +154,10 @@ const Footer = () => {
                 </div>
                 <div className="flex flex-col">
                   <a
-                    href="mailto:info.strikefilmss@gmail.com"
+                    href="mailto:info@strikefilmss.com"
                     className="text-muted-foreground hover:text-primary transition-colors text-sm"
                   >
-                    info.strikefilmss@gmail.com
+                    info@strikefilmss.com
                   </a>
                   <a
                     href="mailto:strikefilmspvtltd@gmail.com"
@@ -172,31 +172,43 @@ const Footer = () => {
         </div>
 
         {/* Bottom Bar */}
-        <div className="mt-16 pt-8 border-t border-border flex flex-col md:flex-row justify-between items-center gap-4">
-          <p className="text-muted-foreground text-sm flex items-center gap-1 flex-wrap justify-center md:justify-start">
-            © 2026 Strike Productions. Design & Developed by{" "}
-            <a
-              href="https://digitacetechsolutions.com"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="text-primary hover:underline font-medium"
-            >
-              Digitace Tech Solutions
-            </a>
-          </p>
-          <div className="flex items-center gap-6">
-            <Link
-              to="/privacy"
-              className="text-muted-foreground hover:text-primary transition-colors text-sm"
-            >
-              Privacy Policy
-            </Link>
-            <Link
-              to="/terms"
-              className="text-muted-foreground hover:text-primary transition-colors text-sm"
-            >
-              Terms of Service
-            </Link>
+        <div className="mt-16 pt-8 border-t border-border">
+          <div className="flex flex-col md:flex-row md:justify-between md:items-center gap-6">
+            {/* Copyright */}
+            <div className="text-center md:text-left">
+              <p className="text-sm text-muted-foreground">
+                © 2026 Strike Productions. All rights reserved.
+              </p>
+
+              <p className="text-sm text-muted-foreground mt-1">
+                Designed & Developed by{" "}
+                <a
+                  href="https://digitacetechsolutions.com"
+                  target="_blank"
+                  rel="noopener noreferrer"
+                  className="font-semibold text-primary hover:underline"
+                >
+                  Digitace Tech Solutions Pvt. Ltd.
+                </a>
+              </p>
+            </div>
+
+            {/* Links */}
+            <div className="flex justify-center md:justify-end gap-6 text-sm">
+              <Link
+                to="/privacy"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                Privacy Policy
+              </Link>
+
+              <Link
+                to="/terms"
+                className="text-muted-foreground hover:text-primary transition-colors"
+              >
+                Terms of Service
+              </Link>
+            </div>
           </div>
         </div>
       </div>
