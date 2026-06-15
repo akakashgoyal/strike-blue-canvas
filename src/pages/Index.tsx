@@ -564,7 +564,7 @@ const Index = () => {
                   <img
                     src={HomeImage}
                     alt="Film Production"
-                    className="relative rounded-3xl shadow-2xl border-4 border-white/50 w-full"
+                    className="relative rounded-3xl shadow-2xl border-4 border-white/50 w-full h-[350px] contain"
                   />
                 </motion.div>
               </motion.div>
