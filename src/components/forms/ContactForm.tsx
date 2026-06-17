@@ -218,7 +218,7 @@ const ContactForm = ({
           type="submit"
           size="lg"
           disabled={state.submitting}
-          className="w-full bg-gradient-to-r from-primary to-purple-600 hover:opacity-90 text-white font-bold shadow-xl h-14 rounded-xl text-base"
+          className="w-full bg-gradient-primary hover:opacity-90 text-white font-bold shadow-xl h-14 rounded-xl text-base"
         >
           {state.submitting ? "Submitting Form" : submitLabel}
           <Send className="ml-2" size={18} />

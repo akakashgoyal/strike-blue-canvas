@@ -273,7 +273,7 @@ const Press = () => {
       </section>
 
       {/* Press Inquiries */}
-      <section className="py-24 bg-gradient-to-r from-primary via-blue-500 to-purple-500 relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-r to-[#38b6f0]  from-[#de4445] relative overflow-hidden">
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
@@ -314,22 +314,6 @@ const Press = () => {
                     </a>
                   </Button>
                 </motion.div>
-                <motion.div whileHover={{ scale: 1.05 }}>
-                  <Button
-                    asChild
-                    size="lg"
-                    className=" text-white hover:bg-white/10 font-bold"
-                  >
-                    <a
-                      href="https://calendly.com/indira-strikefilms/30min"
-                      target="_blank"
-                      rel="noopener noreferrer"
-                    >
-                      <Calendar className="mr-2" size={18} />
-                      Schedule Interview
-                    </a>
-                  </Button>
-                </motion.div>
               </div>
             </motion.div>
           </div>
@@ -337,7 +321,7 @@ const Press = () => {
       </section>
 
       {/* Brand Assets */}
-      <section className="py-24 bg-white">
+      {/* <section className="py-24 bg-white">
         <div className="container mx-auto px-4 lg:px-8">
           <motion.div
             initial={{ opacity: 0, y: 20 }}
@@ -424,7 +408,7 @@ const Press = () => {
             </motion.div>
           </div>
         </div>
-      </section>
+      </section> */}
     </Layout>
   );
 };

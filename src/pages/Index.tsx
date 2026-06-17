@@ -745,7 +745,7 @@ const Index = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-24 bg-gradient-to-r from-primary via-blue-500 to-purple-500 relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-r  from-[#38b6f0]  to-[#de4445] relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=1920&q=80')] bg-cover bg-center opacity-10" />
 
         <motion.div
@@ -833,7 +833,7 @@ const Index = () => {
                 whileTap={{ scale: 0.95 }}
                 className={`px-6 py-2 rounded-full font-semibold transition-all duration-300 ${
                   selectedCategory === category
-                    ? "bg-gradient-to-r from-primary to-purple-500 text-white shadow-lg"
+                    ? "bg-gradient-to-r to-[#38b6f0]  from-[#de4445] text-white shadow-lg"
                     : "bg-white border-2 border-gray-200 text-foreground hover:border-primary"
                 }`}
               >
@@ -1036,7 +1036,7 @@ const Index = () => {
       </section>
 
       {/* Schedule Meeting Section */}
-      <section className="py-24 bg-gradient-to-r from-blue-500 via-purple-500 to-pink-500 relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-r from-[#38b6f0]  to-[#de4445] relative overflow-hidden">
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 50, repeat: Infinity, ease: "linear" }}

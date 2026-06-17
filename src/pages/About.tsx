@@ -100,7 +100,7 @@ const team = [
     color: "from-purple-400 to-pink-500",
   },
   {
-    name: "Vinit Vaibhav Rao",
+    name: "Vinit Vaibhav Roy",
     role: "Creative & Graphics",
     image: vinit,
     color: "from-orange-400 to-red-500",
@@ -258,7 +258,7 @@ const About = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-16 bg-gradient-to-r from-primary via-blue-500 to-purple-500 relative overflow-hidden">
+      <section className="py-16 bg-gradient-to-r  to-[#38b6f0]  from-[#de4445] relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1478720568477-152d9b164e26?w=1920&q=80')] bg-cover bg-center opacity-10" />
 
         <div className="container mx-auto px-4 lg:px-8 relative z-10">
@@ -304,15 +304,16 @@ const About = () => {
               </span>
               <h2 className="font-display text-4xl md:text-5xl text-foreground mb-6">
                 From Vision to{" "}
-                <span className="text-transparent bg-clip-text bg-gradient-to-r from-primary to-purple-500">
+                <span className="text-transparent bg-clip-text bg-gradient-to-r to-[#38b6f0]  from-[#de4445]">
                   Impact
                 </span>
               </h2>
               <div className="space-y-4 text-muted-foreground leading-relaxed text-lg">
                 <p>
-                  Strike Films Media & Advertising was founded by Sagar
-                  Shrivastwa with a simple belief brands don’t grow through
-                  content, they grow through powerful stories.
+                  <strong>Strike Films Media & Advertising</strong> was founded
+                  by <strong>Sagar Shrivastwa</strong> with a simple belief
+                  brands don’t grow through content, they grow through powerful
+                  stories.
                 </p>
                 <p>
                   What began as a passion for filmmaking and storytelling has
@@ -374,7 +375,7 @@ const About = () => {
       </section>
 
       {/* Mission & Vision */}
-      <section className="py-24 bg-gradient-to-r from-primary via-blue-500 to-purple-500 relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-r from-[#38b6f0]  to-[#de4445] relative overflow-hidden">
         <div className="absolute inset-0 bg-[url('https://images.unsplash.com/photo-1516035069371-29a1b244cc32?w=1920&q=80')] bg-cover bg-center opacity-10" />
 
         <motion.div
@@ -668,11 +669,11 @@ const About = () => {
                       className="w-[400px] h-[400px] object-cover group-hover:scale-110 transition-transform duration-500"
                     />
                   </motion.div>
-                  <div
+                  {/* <div
                     className={`absolute -bottom-3 -right-3 w-12 h-12 rounded-xl bg-gradient-to-br ${member.color} flex items-center justify-center shadow-lg`}
                   >
                     <Sparkles className="text-white" size={20} />
-                  </div>
+                  </div> */}
                 </div>
                 <div className="p-6">
                   <h3 className="font-display text-xl text-foreground">
@@ -762,7 +763,7 @@ const About = () => {
       </section> */}
 
       {/* CTA */}
-      <section className="py-24 bg-gradient-to-r from-primary via-blue-500 to-purple-500 relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-r to-[#38b6f0]  from-[#de4445] relative overflow-hidden">
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 50, repeat: Infinity, ease: "linear" }}

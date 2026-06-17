@@ -182,12 +182,12 @@ const Portfolio = () => {
 
   const getCategoryColor = (category: Category) => {
     if (category === "All") {
-      return "from-primary to-purple-500";
+      return "from-[#38b6f0]  to-[#de4445]";
     }
 
     return (
       portfolioItems.find((item) => item.type === category)?.color ||
-      "from-blue-400 to-cyan-500"
+      "from-[#38b6f0]  to-[#de4445]"
     );
   };
 
@@ -326,7 +326,7 @@ const Portfolio = () => {
       </section>
 
       {/* Stats Section */}
-      <section className="py-12 bg-gradient-to-r from-primary via-blue-500 to-purple-500">
+      <section className="py-12 bg-gradient-to-r from-[#38b6f0]  to-[#de4445]">
         <div className="container mx-auto px-4 lg:px-8">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-8">
             {stats.map((stat, index) => (
@@ -499,7 +499,7 @@ const Portfolio = () => {
       </section> */}
 
       {/* CTA */}
-      <section className="py-24 bg-gradient-to-r from-primary via-blue-500 to-purple-500 relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-r to-[#38b6f0]  from-[#de4445] relative overflow-hidden">
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 50, repeat: Infinity, ease: "linear" }}

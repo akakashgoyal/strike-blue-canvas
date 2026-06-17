@@ -357,7 +357,7 @@ const Contact = () => {
       </section> */}
 
       {/* CTA Section */}
-      <section className="py-24 bg-gradient-to-r from-primary via-blue-500 to-purple-500 relative overflow-hidden">
+      <section className="py-24 bg-gradient-to-r to-[#38b6f0]  from-[#de4445] relative overflow-hidden">
         <motion.div
           animate={{ rotate: 360 }}
           transition={{ duration: 50, repeat: Infinity, ease: "linear" }}
